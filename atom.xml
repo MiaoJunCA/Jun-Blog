@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-04-14T02:44:14.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://james97.github.io/"/>
+  <updated>2016-04-14T05:06:21.000Z</updated>
+  <id>http://james97.github.io/</id>
   
   <author>
     <name>Jun (James) Miao</name>
@@ -16,9 +16,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>My New Post</title>
+    <link href="http://james97.github.io/2016/04/14/My-New-Post/"/>
+    <id>http://james97.github.io/2016/04/14/My-New-Post/</id>
+    <published>2016-04-14T05:06:21.000Z</published>
+    <updated>2016-04-14T05:06:21.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2016/04/13/hello-world/"/>
-    <id>http://yoursite.com/2016/04/13/hello-world/</id>
+    <link href="http://james97.github.io/2016/04/13/hello-world/"/>
+    <id>http://james97.github.io/2016/04/13/hello-world/</id>
     <published>2016-04-14T02:44:14.000Z</published>
     <updated>2016-04-14T02:44:14.000Z</updated>
     
