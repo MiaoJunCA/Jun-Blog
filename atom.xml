@@ -5,7 +5,7 @@
   <link href="/Jun-blog/atom.xml" rel="self"/>
   
   <link href="http://james97.github.io/"/>
-  <updated>2016-04-15T16:34:29.000Z</updated>
+  <updated>2016-04-15T16:35:27.000Z</updated>
   <id>http://james97.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://james97.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/"/>
     <id>http://james97.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/</id>
     <published>2016-04-15T14:55:52.000Z</published>
-    <updated>2016-04-15T16:34:29.000Z</updated>
+    <updated>2016-04-15T16:35:27.000Z</updated>
     
     <content type="html">&lt;p&gt;In order to have my own blog, I have tried a lot of ways. A popular one is buy a domain name and a space,  download wordpress, use a template with plenty of plugins. The problem is, I have to select themes and plugins to satisfied my needs, e.g., code highlight or Markdown support. Is that too hard? Not really. But that will definitely cost much time, especially on dealing with css problems and plugin conflicts. Since usually I want to write some about what I learned in my area, it is better to start the blogging as easy as possible.&lt;/p&gt;
 &lt;p&gt;Github gives me the chance. It is the first time I know it can support blogs in a handy way. There are lots of posts talking about how to build it, and the guidance from Github is good enough. Here I want to record how I use &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo&lt;/a&gt; to get this done and what problems I have met.&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;li&gt;execute `hexo generate’ to generate a template site&lt;/li&gt;
 &lt;li&gt;run &lt;code&gt;hexo server&lt;/code&gt; and then open &lt;code&gt;localhost:4000&lt;/code&gt; in your browser&lt;/li&gt;
 &lt;li&gt;if you can see the website, then everything is fine&lt;/li&gt;
-&lt;li&gt;use &lt;code&gt;hexo new [layout ] &amp;quot;title&amp;quot;&lt;/code&gt; to create a new post. For example, `hexo new post “hello world”. Then you will have a new &lt;strong&gt;md&lt;/strong&gt; file in source/_posts folder.&lt;/li&gt;
+&lt;li&gt;use &lt;code&gt;hexo new [layout] &amp;quot;title&amp;quot;&lt;/code&gt; to create a new post. For example, &lt;code&gt;hexo new post &amp;quot;hello world&amp;quot;&lt;/code&gt;. Then you will have a new &lt;strong&gt;md&lt;/strong&gt; file in source/_posts folder.&lt;/li&gt;
 &lt;li&gt;Use a editor to write whatever you like and save it. Here I highly recommend a markdown editor &lt;a href=&quot;http://macdown.uranusjr.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Macdown&lt;/a&gt;. It is open-source and has enough functions for most blogger. &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;hexo deploy&lt;/code&gt; to upload your post to your github blog.&lt;/li&gt;
 &lt;/ol&gt;
