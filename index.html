@@ -111,13 +111,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -263,16 +263,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. </p>
-<h4 id="Machine-learning-vs-Data-mining"><a href="#Machine-learning-vs-Data-mining" class="headerlink" title="Machine learning vs Data mining"></a>Machine learning vs Data mining</h4><p>These two are very confusing for me. Honestly, I don’t think they have essential differences. Both of them means using computer techniques and statistic models to learn latent patterns from data. From the <a href="http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/cccf07.pdf" target="_blank" rel="external">review</a>, Prof. Zhou says that “Machine learning” came from the AI area. Its purpose is make machines learn like real persons. The concept “Data mining” first came from the database area. It is close to “Knowledge discovery”. It is used to discovery useful knowledge from big amount of data. So we can consider DM as the inter-discipline of ML and database. Traditional ML techniques concern on small scale data and DM deals with big data. ML is suitable for pattern recognition and prediction, DM can discovery associations among features(e.g., beer and diaper).<br>&lt;–more–&gt;</p>
-<h4 id="Supervised-learning-vs-Unsupervised-learning"><a href="#Supervised-learning-vs-Unsupervised-learning" class="headerlink" title="Supervised learning vs Unsupervised learning"></a>Supervised learning vs Unsupervised learning</h4><p>Quite clear. Supervised learning rely on labelled data for training. It has very clear outputs. For example, classification or regression are this kind of applications. On the contrary, unsupervised learning do not need labelled data, so we cannot know that exact results we will get. A typical example is clustering. We know the data can be categorized into several groups, but we don’t know the group amount. In that case, there is no best result in general. Of course, to apply unsupervised learning, researchers proposed some metrics to evaluate its performance. </p>
-<h4 id="Deep-learning-vs-Shallow-learning"><a href="#Deep-learning-vs-Shallow-learning" class="headerlink" title="Deep learning vs Shallow learning"></a>Deep learning vs Shallow learning</h4><p>Deep learning is extremely hot recently. AlphaGo is based on the technique. Facebook’s face recognition is based on it. It seems to be the god for AI. Is that true? Why is it “deep”?</p>
-<p>Traditional machine learning methods are called “shallow learning” because they only have no more than 1 hidden layer. What does that mean? These methods will not construct very complex non-linear model. For example, logistic regression is used to find a formula like $\frac{1}{1 + e^{-\theta X}}$. $\theta X$ is actually a dot product of $\theta$ and $X$, or we can say this function is essentially linear. SVM, no matter what kernel it uses, update the same formula by different data to obtain a better performance. Generally, the formula is already determined. What we do is optimize the parameters.</p>
-<p>One may ask about why traditional neural network is shallow too while it can be multi-layer. Let me talk about my opinion about machine learning first. Linear models are the simplest models. They can used to fit data which are not complex. That is why all ML courses start from them. In real world, however, things are not so perfect. We can say linear models are not suitable for most cases. Then how can we model non-linear data? A straightforward way is build a linear model over multiple linear sub-models. For example as follows:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/450px-Colored_neural_network.svg.png" alt="ANN"> </p>
-<p>Each node in the hidden layer is the result of a linear model whose features are the inputs. Each node in the output layer is the result of a linear model of the hidden layer nodes. If we have more layers, we can build a very complex model and ideally fit any curves. Yes, this is the idea of neural networks. </p>
-<p>Wait, since we can have a multi-layer NN, why is it shallow? The problem is, traditional NN is optimized by the classic Back propagation(BP) method. A very detailed introduction is <a href="http://galaxy.agh.edu.pl/~vlsi/AI/backp_t_en/backprop.html" target="_blank" rel="external">here</a>. I will not introduce how it works here. Because BP optimizes parameters layer by layer, the residues used for mid-layer optimization will be very small if there are many layers. So practically, there will not be more than 2 layers. </p>
-<p>How about deep learning? The concept “deep learning” is actually based on NN, and it is a multi-layer NN. The main difference is Professor Hinton found a new way to train the model and avoid the problem of BP. It can therefore support more layers. Facebook builds a 9-layer NN to recognize people’s face and obtain a 97.25% precision. I will read more references about deep learning and write a post in the future.  </p>
-
+              <p>There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. </p>
+<h4 id="Machine-learning-vs-Data-mining"><a href="#Machine-learning-vs-Data-mining" class="headerlink" title="Machine learning vs Data mining"></a>Machine learning vs Data mining</h4><p>These two are very confusing for me. Honestly, I don’t think they have essential differences. Both of them means using computer techniques and statistic models to learn latent patterns from data. From the <a href="http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/cccf07.pdf">review</a>, Prof. Zhou says that “Machine learning” came from the AI area. Its purpose is make machines learn like real persons. The concept “Data mining” first came from the database area. It is close to “Knowledge discovery”. It is used to discovery useful knowledge from big amount of data. So we can consider DM as the inter-discipline of ML and database. Traditional ML techniques concern on small scale data and DM deals with big data. ML is suitable for pattern recognition and prediction, DM can discovery associations among features(e.g., beer and diaper).<br>
+          
       
     </div>
     
@@ -290,6 +283,10 @@
     </div>
 
 
+      
+        <p class="article-more-link">
+          <a href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -446,14 +443,14 @@
                 &copy; 2016 Jun (James) Miao
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo">Yelee</a> by MOxFIVE
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
+                        <span id="site-visit" >Site Visitors: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -463,7 +460,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">Page Hits: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -519,9 +516,9 @@ MathJax.Hub.Queue(function() {
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
