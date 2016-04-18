@@ -158,7 +158,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/hexo/">hexo</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/data-mining/">data mining</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/machine-learning/">machine learning</a></li></ul>
                     </div>
                 </section>
                 
@@ -236,6 +236,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Machine-Learning-Concepts" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/" class="article-date">
+      <time datetime="2016-04-18T04:05:06.000Z" itemprop="datePublished">2016-04-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/">Machine Learning Concepts(1)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. </p>
+<h4 id="Machine-learning-vs-Data-mining"><a href="#Machine-learning-vs-Data-mining" class="headerlink" title="Machine learning vs Data mining"></a>Machine learning vs Data mining</h4><p>These two are very confusing for me. Honestly, I don’t think they have essential differences. Both of them means using computer techniques and statistic models to learn latent patterns from data. From the <a href="http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/cccf07.pdf" target="_blank" rel="external">review</a>, Prof. Zhou says that “Machine learning” came from the AI area. Its purpose is make machines learn like real persons. The concept “Data mining” first came from the database area. It is close to “Knowledge discovery”. It is used to discovery useful knowledge from big amount of data. So we can consider DM as the inter-discipline of ML and database. Traditional ML techniques concern on small scale data and DM deals with big data. ML is suitable for pattern recognition and prediction, DM can discovery associations among features(e.g., beer and diaper). </p>
+<h4 id="Supervised-learning-vs-Unsupervised-learning"><a href="#Supervised-learning-vs-Unsupervised-learning" class="headerlink" title="Supervised learning vs Unsupervised learning"></a>Supervised learning vs Unsupervised learning</h4><p>Quite clear. Supervised learning rely on labelled data for training. It has very clear outputs. For example, classification or regression are this kind of applications. On the contrary, unsupervised learning do not need labelled data, so we cannot know that exact results we will get. A typical example is clustering. We know the data can be categorized into several groups, but we don’t know the group amount. In that case, there is no best result in general. Of course, to apply unsupervised learning, researchers proposed some metrics to evaluate its performance. </p>
+<h4 id="Deep-learning-vs-Shallow-learning"><a href="#Deep-learning-vs-Shallow-learning" class="headerlink" title="Deep learning vs Shallow learning"></a>Deep learning vs Shallow learning</h4><p>Deep learning is extremely hot recently. AlphaGo is based on the technique. Facebook’s face recognition is based on it. It seems to be the god for AI. Is that true? Why is it “deep”?</p>
+<p>Traditional machine learning methods are called “shallow learning” because they only have no more than 1 hidden layer. What does that mean? These methods will not construct very complex non-linear model. For example, logistic regression is used to find a formula like $\frac{1}{1 + e^{-\theta X}}$. $\theta X$ is actually a dot product of $\theta$ and $X$, or we can say this function is essentially linear. SVM, no matter what kernel it uses, update the same formula by different data to obtain a better performance. Generally, the formula is already determined. What we do is optimize the parameters.</p>
+<p>One may ask about why traditional neural network is shallow too while it can be multi-layer. Let me talk about my opinion about machine learning first. Linear models are the simplest models. They can used to fit data which are not complex. That is why all ML courses start from them. In real world, however, things are not so perfect. We can say linear models are not suitable for most cases. Then how can we model non-linear data? A straightforward way is build a linear model over multiple linear sub-models. For example as follows:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/450px-Colored_neural_network.svg.png" alt="ANN"> </p>
+<p>Each node in the hidden layer is the result of a linear model whose features are the inputs. Each node in the output layer is the result of a linear model of the hidden layer nodes. If we have more layers, we can build a very complex model and ideally fit any curves. Yes, this is the idea of neural networks. </p>
+<p>Wait, since we can have a multi-layer NN, why is it shallow? The problem is, traditional NN is optimized by the classic Back propagation(BP) method. A very detailed introduction is <a href="http://galaxy.agh.edu.pl/~vlsi/AI/backp_t_en/backprop.html" target="_blank" rel="external">here</a>. I will not introduce how it works here. Because BP optimizes parameters layer by layer, the residues used for mid-layer optimization will be very small if there are many layers. So practically, there will not be more than 2 layers. </p>
+<p>How about deep learning? The concept “deep learning” is actually based on NN, and it is a multi-layer NN. The main difference is Professor Hinton found a new way to train the model and avoid the problem of BP. It can therefore support more layers. Facebook builds a 9-layer NN to recognize people’s face and obtain a 97.25% precision. I will read more references about deep learning and write a post in the future.  </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/Jun-blog/categories/machine-learning/">machine learning<span class="article-category-count">1</span></a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/data-mining/">data mining</a><span class="article-tag-list-count">1</span></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/machine-learning/">machine learning</a><span class="article-tag-list-count">1</span></li></ul>
+    </div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-Build-a-light-blog-on-Github-by-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -284,7 +355,7 @@
 
       
         <p class="article-more-link">
-          <a href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/#more">more >></a>
+          <a href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>
