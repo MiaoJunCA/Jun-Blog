@@ -5,7 +5,7 @@
   <link href="/Jun-blog/atom.xml" rel="self"/>
   
   <link href="http://james97.github.io/"/>
-  <updated>2016-04-18T14:59:21.000Z</updated>
+  <updated>2016-04-20T17:27:25.000Z</updated>
   <id>http://james97.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Machine Learning Concepts (2)</title>
+    <link href="http://james97.github.io/2016/04/20/Machine-Learning-Concepts-2/"/>
+    <id>http://james97.github.io/2016/04/20/Machine-Learning-Concepts-2/</id>
+    <published>2016-04-20T13:51:09.000Z</published>
+    <updated>2016-04-20T17:27:25.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Continue to the previous post.&lt;/p&gt;
+&lt;h4 id=&quot;Bias-vs-Variance&quot;&gt;&lt;a href=&quot;#Bias-vs-Variance&quot; class=&quot;headerlink&quot; title=&quot;Bias vs Variance&quot;&gt;&lt;/a&gt;Bias vs Variance&lt;/h4&gt;&lt;p&gt;These two concepts have confused me for a long time, until I read something in &lt;strong&gt;Pattern Recognition and Machine Learning&lt;/strong&gt;. Generally, bias is the difference between the real model $G(x)$ and the model we learn $H(x)$; variance is the difference between $H(x)$ and $E(H(x))$. Here is a good picture to explain them:&lt;br&gt;&lt;img src=&quot;http://blog.fliptop.com/wp-content/uploads/2015/01/Bias_Variance.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The red spot is our target, or we can say $G(x)$. High bias means the learned model $H(x)$ is quite different from the real model, so we will get bad performance with this model. A high variance means the expectation of $H(x)$ is close to $E(G(x))$, but the result $H(x_i)$ for each sample $x_i$ is not close to $G(x_i)$. Ideally, we want both of them to be low. However, that is a kind of trade-off. The decrease of one will cause an increase of the other one. High variance learning methods may be able to represent the training set very well. But the world is not perfect, it will try to match everything, including the noise. So the model we get will be very complex and may fail for more new data. On the contrary, high-bias models are usually very simple, but fail to capture the important regularities. Models with low bias are usually very complex and obtain low training error. This complexity makes it hard to be generalized for other new samples, which gives high variance. &lt;/p&gt;
+&lt;h4 id=&quot;Overfit-vs-Underfit&quot;&gt;&lt;a href=&quot;#Overfit-vs-Underfit&quot; class=&quot;headerlink&quot; title=&quot;Overfit vs Underfit&quot;&gt;&lt;/a&gt;Overfit vs Underfit&lt;/h4&gt;&lt;p&gt;These two concepts are connect with the above two. High variance leads to overfit, and high bias causes underfit. The following figure can describe them well.&lt;br&gt;&lt;img src=&quot;http://blog.fliptop.com/wp-content/uploads/2015/03/highvariance-300x254.png&quot; alt=&quot;&quot;&gt;. When training error is smaller and smaller, the probability of overfit increases because the model will be very complex (As we say above, this will cause a high variance because the model is too accurate for the training data. It will match noisy samples as well). A high-bias model will get a high training error with a simple form. So it can’t fit the training set well enough, or we can say “underfit”.&lt;/p&gt;
+&lt;p&gt;The Figures are from &lt;a href=&quot;http://blog.fliptop.com/blog/2015/03/02/bias-variance-and-overfitting-machine-learning-overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Fliptop Blog&lt;/a&gt;. This post gives a better description about these concepts.&lt;/p&gt;
+&lt;h4 id=&quot;Regression-VS-Classification&quot;&gt;&lt;a href=&quot;#Regression-VS-Classification&quot; class=&quot;headerlink&quot; title=&quot;Regression VS Classification&quot;&gt;&lt;/a&gt;Regression VS Classification&lt;/h4&gt;&lt;p&gt;Regression methods are used to fit data for continuous targets, e.g., predict stock market value. Classification methods are for discrete targets, e.g., predict whether tomorrow will be sunny or rainy. &lt;/p&gt;
+&lt;h4 id=&quot;Reinforced-learning&quot;&gt;&lt;a href=&quot;#Reinforced-learning&quot; class=&quot;headerlink&quot; title=&quot;Reinforced learning&quot;&gt;&lt;/a&gt;Reinforced learning&lt;/h4&gt;&lt;p&gt;This is different from deep learning. It does not have multiple layers. Instead, it has a environment state set, an action set and a set of state transition rules. Unlike traditional machine learning methods, it cannot be trained in one time. A typical scenario is playing chess. Each decision is determined by previous one or more steps. So the learning process is step by step, too. In this case, we setup a reward function instead of an error function. If we think a step is good, then we will give the learning agent a positive reward. Otherwise, it will be given a punishment. The problem becomes finding a step path with the maximum reward. &lt;/p&gt;
+&lt;p&gt;Reinforced learning has been widely used in auto helicopter, robots, industrial control… It is a elegant solution for complex Markov Decision Process(MDP). A brief tutorial can be found &lt;a href=&quot;http://www.cs.ubc.ca/~murphyk/Bayes/pomdp.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Continue to the previous post.&lt;/p&gt;
+&lt;h4 id=&quot;Bias-vs-Variance&quot;&gt;&lt;a href=&quot;#Bias-vs-Variance&quot; class=&quot;headerlink&quot; title=&quot;Bias vs Variance&quot;&gt;&lt;/a&gt;Bias vs Variance&lt;/h4&gt;&lt;p&gt;These two concepts have confused me for a long time, until I read something in &lt;strong&gt;Pattern Recognition and Machine Learning&lt;/strong&gt;. Generally, bias is the difference between the real model $G(x)$ and the model we learn $H(x)$; variance is the difference between $H(x)$ and $E(H(x))$. Here is a good picture to explain them:&lt;br&gt;&lt;img src=&quot;http://blog.fliptop.com/wp-content/uploads/2015/01/Bias_Variance.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="machine learning" scheme="http://james97.github.io/categories/machine-learning/"/>
+    
+    
+      <category term="machine learning" scheme="http://james97.github.io/tags/machine-learning/"/>
+    
+      <category term="data mining" scheme="http://james97.github.io/tags/data-mining/"/>
+    
+  </entry>
   
   <entry>
     <title>Machine Learning Concepts(1)</title>
