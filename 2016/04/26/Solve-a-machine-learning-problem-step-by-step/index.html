@@ -3,23 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Machine Learning Concepts(1) | Jun&#39;s Note Blog</title>
+  <title>Solve a machine learning problem step by step | Jun&#39;s Note Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. 
-Machine learning vs Data miningThese two">
+  <meta name="description" content="####Main frame for data science problems
+My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Machine Learning Concepts(1)">
-<meta property="og:url" content="http://james97.github.io/2016/04/18/Machine-Learning-Concepts/index.html">
+<meta property="og:title" content="Solve a machine learning problem step by step">
+<meta property="og:url" content="http://james97.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/index.html">
 <meta property="og:site_name" content="Jun's Note Blog">
-<meta property="og:description" content="There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. 
-Machine learning vs Data miningThese two">
-<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/450px-Colored_neural_network.svg.png">
-<meta property="og:updated_time" content="2016-04-18T14:59:21.000Z">
+<meta property="og:description" content="####Main frame for data science problems
+My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a">
+<meta property="og:updated_time" content="2016-04-26T18:39:59.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Machine Learning Concepts(1)">
-<meta name="twitter:description" content="There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. 
-Machine learning vs Data miningThese two">
-<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/450px-Colored_neural_network.svg.png">
+<meta name="twitter:title" content="Solve a machine learning problem step by step">
+<meta name="twitter:description" content="####Main frame for data science problems
+My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a">
   
     <link rel="alternative" href="/atom.xml" title="Jun&#39;s Note Blog" type="application/atom+xml">
   
@@ -235,11 +233,11 @@ Machine learning vs Data miningThese two">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Machine-Learning-Concepts" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Solve-a-machine-learning-problem-step-by-step" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/" class="article-date">
-      <time datetime="2016-04-18T04:05:06.000Z" itemprop="datePublished">2016-04-18</time>
+      <a href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" class="article-date">
+      <time datetime="2016-04-26T18:32:11.000Z" itemprop="datePublished">2016-04-26</time>
 </a>
     </div>
   
@@ -252,7 +250,7 @@ Machine learning vs Data miningThese two">
         
   
     <h1 class="article-title" itemprop="name">
-      Machine Learning Concepts(1)
+      Solve a machine learning problem step by step
     </h1>
   
 
@@ -260,14 +258,10 @@ Machine learning vs Data miningThese two">
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/Jun-blog/categories/machine-learning/">machine learning</a>
-    </div>
-
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/data-mining/">data mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/machine-learning/">machine learning</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/machine-learning/">machine learning</a></li></ul>
     </div>
 
 
@@ -278,21 +272,50 @@ Machine learning vs Data miningThese two">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>There are lots of machine learning concepts which look complex and mysterious. Before learning the ML techniques, it is necessary to understand them clearly. </p>
-<h4 id="Machine-learning-vs-Data-mining"><a href="#Machine-learning-vs-Data-mining" class="headerlink" title="Machine learning vs Data mining"></a>Machine learning vs Data mining</h4><p>These two are very confusing for me. Honestly, I don’t think they have essential differences. Both of them means using computer techniques and statistic models to learn latent patterns from data. From the <a href="http://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/cccf07.pdf" target="_blank" rel="external">review</a>, Prof. Zhou says that “Machine learning” came from the AI area. Its purpose is making machines learn like real persons. The concept “Data mining” first came from the database area. It is close to “Knowledge discovery”. It is used to discovery useful knowledge from big amount of data. So we can consider DM as the inter-discipline of ML and database. A more formal definition from <a href="https://class.coursera.org/ntumlone-003/lecture/11" target="_blank" rel="external">coursera</a> by Prof.Hsuan-Tien Lin is </p>
+        <p>####Main frame for data science problems</p>
+<p>My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a nice result. Fetching the python code from a top-k author and modify it is an easy way. However, in order to find a data scientist job, it is better to learn how to solve these problems from the very beginning.</p>
+<p>Basically, we can divide the process into several steps: </p>
+<ol>
+<li>Collect data. On Kaggle, data are ready in .csv files, so it is easy to read them through Pandas. For other scenarios, we need to collect data by ourselves and store them. The techniques or tools we can use are Nutch, Scrapy, Mysql, Solr/Lucene. </li>
+<li><p>Load Data. Pandas has a series of readers to read data in different formats, which is very nice. Check the list below for what you need: </p>
 <ul>
-<li>Machine learning: use data to computer hypothesis g that approximate target f</li>
-<li>Data mining: use (huge) data to find property.</li>
-<li>Traditional ML techniques concern on small scale data and DM deals with big data. ML is suitable for pattern recognition and prediction, DM can discovery associations among features(e.g., beer and diaper). <a id="more"></a>
-</li>
+<li>read_csv </li>
+<li>read_excel </li>
+<li>read_hdf </li>
+<li>read_sql </li>
+<li>read_json </li>
+<li>read_msgpack (experimental) </li>
+<li>read_html </li>
+<li>read_gbq (experimental) </li>
+<li>read_stata - read_sas </li>
+<li>read_clipboard </li>
+<li>read_pickle </li>
 </ul>
-<h4 id="Supervised-learning-vs-Unsupervised-learning"><a href="#Supervised-learning-vs-Unsupervised-learning" class="headerlink" title="Supervised learning vs Unsupervised learning"></a>Supervised learning vs Unsupervised learning</h4><p>Quite clear. Supervised learning rely on labelled data for training. It has very clear outputs. For example, classification or regression are this kind of applications. On the contrary, unsupervised learning do not need labelled data, so we cannot know that exact results we will get. A typical example is clustering. We know the data can be categorized into several groups, but we don’t know the group amount. In that case, there is no best result in general. Of course, to apply unsupervised learning, researchers proposed some metrics to evaluate its performance. </p>
-<h4 id="Deep-learning-vs-Shallow-learning"><a href="#Deep-learning-vs-Shallow-learning" class="headerlink" title="Deep learning vs Shallow learning"></a>Deep learning vs Shallow learning</h4><p>Deep learning is extremely hot recently. AlphaGo is based on the technique. Facebook’s face recognition is based on it. It seems to be the god for AI. Is that true? Why is it “deep”?</p>
-<p>Traditional machine learning methods are called “shallow learning” because they only have no more than 1 hidden layer. What does that mean? These methods will not construct very complex non-linear model. For example, logistic regression is used to find a formula like $\frac{1}{1 + e^{-\theta X}}$. $\theta X$ is actually a dot product of $\theta$ and $X$, or we can say this function is essentially linear. SVM, no matter what kernel it uses, update the same formula by different data to obtain a better performance. Generally, the formula is already determined. What we do is optimize the parameters.</p>
-<p>One may ask about why traditional neural network is shallow too while it can be multi-layer. Let me talk about my opinion about machine learning first. Linear models are the simplest models. They can used to fit data which are not complex. That is why all ML courses start from them. In real world, however, things are not so perfect. We can say linear models are not suitable for most cases. Then how can we model non-linear data? A straightforward way is build a linear model over multiple linear sub-models. For example as follows:<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Colored_neural_network.svg/450px-Colored_neural_network.svg.png" alt="ANN"> </p>
-<p>Each node in the hidden layer is the result of a linear model whose features are the inputs. Each node in the output layer is the result of a linear model of the hidden layer nodes. If we have more layers, we can build a very complex model and ideally fit any curves. Yes, this is the idea of neural networks. </p>
-<p>Wait, since we can have a multi-layer NN, why is it shallow? The problem is, traditional NN is optimized by the classic Back propagation(BP) method. A very detailed introduction is <a href="http://galaxy.agh.edu.pl/~vlsi/AI/backp_t_en/backprop.html" target="_blank" rel="external">here</a>. I will not introduce how it works here. Because BP optimizes parameters layer by layer, the residues used for mid-layer optimization will be very small if there are many layers. So practically, there will not be more than 2 layers. </p>
-<p>How about deep learning? The concept “deep learning” is actually based on NN, and it is a multi-layer NN. The main difference is Professor Hinton found a new way to train the model and avoid the problem of BP. It can therefore support more layers. Facebook builds a 9-layer NN to recognize people’s face and obtain a 97.25% precision. I will read more references about deep learning and write a post in the future.  </p>
+</li>
+<li><p>Data conversion. Usually, we use float vectors to represent each item and for the learning process, but the world is not so nice to provide such data only. So we may have free texts and categories. Luckily, we have Pandas and Sklearn to deal with them. - Texts. Vectorizer. For exmaple, a commonly used Vectorizer from sklearn package is TfidfVectorizer: </p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">new_docs = [<span class="string">'He watches basketball and baseball'</span>, <span class="string">'Julie likes to play basketball'</span>, <span class="string">'Jane loves to play baseball'</span>] </span><br><span class="line">new_term_freq_matrix = tfidf_vectorizer.transform(new_docs) </span><br><span class="line"><span class="keyword">print</span> tfidf_vectorizer.vocabulary_ </span><br><span class="line"><span class="keyword">print</span> new_term_freq_matrix.todense()</span><br><span class="line"></span><br><span class="line"><span class="comment">#Terms are transformed to features, </span></span><br><span class="line">the value number <span class="keyword">is</span> the feature index of</span><br><span class="line">this term &#123;<span class="string">u'me'</span>: <span class="number">8</span>, <span class="string">u'basketball'</span>: <span class="number">1</span>, <span class="string">u'julie'</span>: <span class="number">4</span>, <span class="string">u'baseball'</span>: <span class="number">0</span>, </span><br><span class="line"><span class="string">u'likes'</span>: <span class="number">5</span>, <span class="string">u'loves'</span>: <span class="number">7</span>, <span class="string">u'jane'</span>: <span class="number">3</span>, <span class="string">u'linda'</span>: <span class="number">6</span>, <span class="string">u'more'</span>: <span class="number">9</span>, </span><br><span class="line"><span class="string">u'than'</span>: <span class="number">10</span>, <span class="string">u'he'</span>: <span class="number">2</span>&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">#tfidf vector for each document </span></span><br><span class="line">[[ <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.</span> <span class="number">0.68091856</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.51785612</span> <span class="number">0.51785612</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.4736296</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ]]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>To convert categories into integers, we can use Pandas with a map function: </li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Data are from the Titanic competition on Kaggle.com</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">'Gender'</span>] = <span class="number">4</span> <span class="comment">#Genders are converted to integers by the map function with a dictionary </span></span><br><span class="line">df[<span class="string">'Gender'</span>] = df[<span class="string">'Sex'</span>].map( &#123;<span class="string">'female'</span>: <span class="number">0</span>, <span class="string">'male'</span>: <span class="number">1</span>&#125; ).astype(int)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>Data munging and data clean. <ul>
+<li>If we want to remove a feature, just use Pandas’s drop() function. Droping items with NA features? Easy <code>pd.dropna()</code> </li>
+<li>Simply filling NA features. <code>pd.fillna()</code>. Of course, there are lots of parameters we can use for filling. </li>
+<li>Complex filling. Sometimes, we want to fill the missing values more reasonably. For example, use the combination of other different features to determine the lost feature values. </li>
+<li>Feature creation. If we think we can make new features based on the current ones, it sometimes makes sense. For example, in the Titanic competition, we have the numbers of siblings and children. We can combine them to be a new features “familySize”. If we have the length and width of a rectangle, we can create a feature named “Area”. Actually, according to the <a href="http://www.jmlr.org/papers/volume3/guyon03a/guyon03a.pdf" target="_blank" rel="external">paper</a> about how to select features, features which have high variance with each other can also be complements. So don’t worry about the information overlap among features. </li>
+<li>Normalization. It is necessary to normalize features into the same scale like 0 to 1. No matter we plan to use linear models or not, this can help get a more reasonable result. </li>
+<li>Dimension deduction. PCA or LDA can reduce less important features and improve the learning speed. However, they have their own limit for particular scenarios. </li>
+</ul>
+</li>
+</ol>
+<ol>
+<li>Training. Select appropriate models for training. If you don’t know the best choice, try linear models or GBDT/RandomForest. Usually, they are not bad. </li>
+<li>Testing. No matter cross-validation or others. Don’t use the same data for both training and testing. </li>
+<li>Use it. In Kaggle cases, use your trained model on the test data and submit it.</li>
+</ol>
 
       
     </div>
@@ -301,13 +324,13 @@ Machine learning vs Data miningThese two">
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/">Machine Learning Concepts(1)</a></p>
+        <p><span>Title:</span><a href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Jun (James) Miao</a></p>
-        <p><span>Created:</span>2016-04-18, 00:05:06</p>
-        <p><span>Updated:</span>2016-04-18, 10:59:21</p>
+        <p><span>Created:</span>2016-04-26, 14:32:11</p>
+        <p><span>Updated:</span>2016-04-26, 14:39:59</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/" title="Machine Learning Concepts(1)">http://james97.github.io/Jun-blog/2016/04/18/Machine-Learning-Concepts/</a>
-            <span class="copy-path" data-clipboard-text="From http://james97.github.io/Jun-blog/2016/04/18/Machine-Learning-Concepts/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" title="Solve a machine learning problem step by step">http://james97.github.io/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</a>
+            <span class="copy-path" data-clipboard-text="From http://james97.github.io/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -320,16 +343,10 @@ Machine learning vs Data miningThese two">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/">
-                    Machine Learning Concepts (2)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/">
-                    Build a light blog on Github by Hexo
+                <a href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/">
+                    Machine Learning Concepts (2)
                 </a>
             </div>
         
@@ -340,7 +357,7 @@ Machine learning vs Data miningThese two">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">Contents</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Machine-learning-vs-Data-mining"><span class="toc-number">1.</span> <span class="toc-text">Machine learning vs Data mining</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Supervised-learning-vs-Unsupervised-learning"><span class="toc-number">2.</span> <span class="toc-text">Supervised learning vs Unsupervised learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Deep-learning-vs-Shallow-learning"><span class="toc-number">3.</span> <span class="toc-text">Deep learning vs Shallow learning</span></a></li></ol>
+    
 </div>
 <style>
     .left-col .switch-btn {
@@ -397,7 +414,7 @@ Machine learning vs Data miningThese two">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Machine Learning Concepts(1)　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Solve a machine learning problem step by step　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -417,15 +434,13 @@ Machine learning vs Data miningThese two">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/" title="Pre: Machine Learning Concepts (2)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/" title="Next: Build a light blog on Github by Hexo">
+            <a href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/" title="Next: Machine Learning Concepts (2)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
