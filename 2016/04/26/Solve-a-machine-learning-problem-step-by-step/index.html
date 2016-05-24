@@ -110,13 +110,13 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -157,7 +157,7 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/data-mining/">data mining</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/machine-learning/">machine learning</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/blog/">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/data-mining/">data mining</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Jun-blog/tags/plugin/">plugin</a></li></ul>
                     </div>
                 </section>
                 
@@ -295,28 +295,28 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
 <li><p>Data conversion. Usually, we use float vectors to represent each item and for the learning process, but the world is not so nice to provide such data only. So we may have free texts and categories. Luckily, we have Pandas and Sklearn to deal with them. </p>
 <ul>
 <li><p>Texts. Vectorizer. For exmaple, a commonly used Vectorizer from sklearn package is TfidfVectorizer: </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">new_docs = [<span class="string">'He watches basketball and baseball'</span>, <span class="string">'Julie likes to play basketball'</span>, <span class="string">'Jane loves to play baseball'</span>] </span><br><span class="line">new_term_freq_matrix = tfidf_vectorizer.transform(new_docs) </span><br><span class="line"><span class="keyword">print</span> tfidf_vectorizer.vocabulary_ </span><br><span class="line"><span class="keyword">print</span> new_term_freq_matrix.todense()</span><br><span class="line"></span><br><span class="line"><span class="comment">#Terms are transformed to features, </span></span><br><span class="line">the value number <span class="keyword">is</span> the feature index of</span><br><span class="line">this term &#123;<span class="string">u'me'</span>: <span class="number">8</span>, <span class="string">u'basketball'</span>: <span class="number">1</span>, <span class="string">u'julie'</span>: <span class="number">4</span>, <span class="string">u'baseball'</span>: <span class="number">0</span>, </span><br><span class="line"><span class="string">u'likes'</span>: <span class="number">5</span>, <span class="string">u'loves'</span>: <span class="number">7</span>, <span class="string">u'jane'</span>: <span class="number">3</span>, <span class="string">u'linda'</span>: <span class="number">6</span>, <span class="string">u'more'</span>: <span class="number">9</span>, </span><br><span class="line"><span class="string">u'than'</span>: <span class="number">10</span>, <span class="string">u'he'</span>: <span class="number">2</span>&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">#tfidf vector for each document </span></span><br><span class="line">[[ <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.</span> <span class="number">0.68091856</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.51785612</span> <span class="number">0.51785612</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.4736296</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ]]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">new_docs = [<span class="string">&apos;He watches basketball and baseball&apos;</span>, <span class="string">&apos;Julie likes to play basketball&apos;</span>, <span class="string">&apos;Jane loves to play baseball&apos;</span>] </span><br><span class="line">new_term_freq_matrix = tfidf_vectorizer.transform(new_docs) </span><br><span class="line"><span class="keyword">print</span> tfidf_vectorizer.vocabulary_ </span><br><span class="line"><span class="keyword">print</span> new_term_freq_matrix.todense()</span><br><span class="line"></span><br><span class="line"><span class="comment">#Terms are transformed to features, </span></span><br><span class="line">the value number <span class="keyword">is</span> the feature index of</span><br><span class="line">this term {<span class="string">u&apos;me&apos;</span>: <span class="number">8</span>, <span class="string">u&apos;basketball&apos;</span>: <span class="number">1</span>, <span class="string">u&apos;julie&apos;</span>: <span class="number">4</span>, <span class="string">u&apos;baseball&apos;</span>: <span class="number">0</span>, </span><br><span class="line"><span class="string">u&apos;likes&apos;</span>: <span class="number">5</span>, <span class="string">u&apos;loves&apos;</span>: <span class="number">7</span>, <span class="string">u&apos;jane&apos;</span>: <span class="number">3</span>, <span class="string">u&apos;linda&apos;</span>: <span class="number">6</span>, <span class="string">u&apos;more&apos;</span>: <span class="number">9</span>, </span><br><span class="line"><span class="string">u&apos;than&apos;</span>: <span class="number">10</span>, <span class="string">u&apos;he&apos;</span>: <span class="number">2</span>} </span><br><span class="line"></span><br><span class="line"><span class="comment">#tfidf vector for each document </span></span><br><span class="line">[[ <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.</span> <span class="number">0.68091856</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.51785612</span> <span class="number">0.51785612</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.4736296</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ]]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>To convert categories into integers, we can use Pandas with a map function: </p>
 </li>
 </ul>
 </li>
 </ol>
-<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Data are from the Titanic competition on Kaggle.com</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">'Gender'</span>] = <span class="number">4</span> <span class="comment">#Genders are converted to integers by the map function with a dictionary </span></span><br><span class="line">df[<span class="string">'Gender'</span>] = df[<span class="string">'Sex'</span>].map( &#123;<span class="string">'female'</span>: <span class="number">0</span>, <span class="string">'male'</span>: <span class="number">1</span>&#125; ).astype(int)</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Data are from the Titanic competition on Kaggle.com</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&apos;Gender&apos;</span>] = <span class="number">4</span> <span class="comment">#Genders are converted to integers by the map function with a dictionary </span></span><br><span class="line">df[<span class="string">&apos;Gender&apos;</span>] = df[<span class="string">&apos;Sex&apos;</span>].map( {<span class="string">&apos;female&apos;</span>: <span class="number">0</span>, <span class="string">&apos;male&apos;</span>: <span class="number">1</span>} ).astype(int)</span><br></pre></td></tr></table></figure>
 </code></pre><ol>
 <li><p>Data munging and data clean. </p>
 <ul>
-<li>If we want to remove a feature, just use Pandas’s drop() function. Droping items with NA features? Easy <code>pd.dropna()</code> </li>
+<li>If we want to remove a feature, just use Pandas&#x2019;s drop() function. Droping items with NA features? Easy <code>pd.dropna()</code> </li>
 <li>Simply filling NA features. <code>pd.fillna()</code>. Of course, there are lots of parameters we can use for filling. </li>
 <li>Complex filling. Sometimes, we want to fill the missing values more reasonably. For example, use the combination of other different features to determine the lost feature values. </li>
-<li>Feature creation. If we think we can make new features based on the current ones, it sometimes makes sense. For example, in the Titanic competition, we have the numbers of siblings and children. We can combine them to be a new features “familySize”. If we have the length and width of a rectangle, we can create a feature named “Area”. Actually, according to the <a href="http://www.jmlr.org/papers/volume3/guyon03a/guyon03a.pdf" target="_blank" rel="external">paper</a> about how to select features, features which have high variance with each other can also be complements. So don’t worry about the information overlap among features. </li>
+<li>Feature creation. If we think we can make new features based on the current ones, it sometimes makes sense. For example, in the Titanic competition, we have the numbers of siblings and children. We can combine them to be a new features &#x201C;familySize&#x201D;. If we have the length and width of a rectangle, we can create a feature named &#x201C;Area&#x201D;. Actually, according to the <a href="http://www.jmlr.org/papers/volume3/guyon03a/guyon03a.pdf" target="_blank" rel="external">paper</a> about how to select features, features which have high variance with each other can also be complements. So don&#x2019;t worry about the information overlap among features. </li>
 <li>Normalization. It is necessary to normalize features into the same scale like 0 to 1. No matter we plan to use linear models or not, this can help get a more reasonable result. </li>
 <li>Dimension deduction. PCA or LDA can reduce less important features and improve the learning speed. However, they have their own limit for particular scenarios. </li>
 </ul>
 </li>
-<li><p>Training. Select appropriate models for training. If you don’t know the best choice, try linear models or GBDT/RandomForest. Usually, they are not bad. </p>
+<li><p>Training. Select appropriate models for training. If you don&#x2019;t know the best choice, try linear models or GBDT/RandomForest. Usually, they are not bad. </p>
 </li>
-<li>Testing. No matter cross-validation or others. Don’t use the same data for both training and testing. </li>
+<li>Testing. No matter cross-validation or others. Don&#x2019;t use the same data for both training and testing. </li>
 <li>Use it. In Kaggle cases, use your trained model on the test data and submit it.</li>
 </ol>
 
@@ -327,24 +327,30 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></p>
-        <p><span>文章作者:</span><a href="/" title="回到主页">Jun (James) Miao</a></p>
-        <p><span>发布时间:</span>2016-04-26, 14:32:11</p>
-        <p><span>最后更新:</span>2016-04-26, 14:45:30</p>
+        <p><span>Title:</span><a href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Jun (James) Miao</a></p>
+        <p><span>Created:</span>2016-04-26, 14:32:11</p>
+        <p><span>Updated:</span>2016-04-26, 14:45:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" title="Solve a machine learning problem step by step">http://james97.github.io/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://james97.github.io/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/　　作者: Jun (James) Miao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" title="Solve a machine learning problem step by step">http://james97.github.io/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</a>
+            <span class="copy-path" data-clipboard-text="From http://james97.github.io/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
         </p>
     </div>
 
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/Jun-blog/2016/04/27/Linear-models-1/">
+                    Linear models (1)
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -359,7 +365,7 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
+    <strong class="toc-title">Contents</strong>
     
 </div>
 <style>
@@ -371,10 +377,10 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
     }
 </style>
 
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 <script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
+    var valueHide = "Hide";
+    var valueShow = "Show";
 
     if ($(".left-col").is(":hidden")) {
         $("#tocButton").attr("value", valueShow);
@@ -437,19 +443,21 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/Jun-blog/2016/04/27/Linear-models-1/" title="Pre: Linear models (1)">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/" title="下一篇: Machine Learning Concepts (2)">
+            <a href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/" title="Next: Machine Learning Concepts (2)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/">Machine Learning Concepts (2)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/">Machine Learning Concepts(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/">Build a light blog on Github by Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/13/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/">insert local image for hexo sites</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/">Something about MapReduce(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/27/Linear-models-1/">Linear models (1)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/">Machine Learning Concepts (2)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/">Machine Learning Concepts(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/">Build a light blog on Github by Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/13/hello-world/">Hello World</a></li></ul>
 
 
 
@@ -465,14 +473,14 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
                 &copy; 2016 Jun (James) Miao
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo">Yelee</a> by MOxFIVE
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >本站到访数: 
+                        <span id="site-visit" >Site Visitors: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -482,7 +490,7 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
+                        <span id="page-visit">Page Hits: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -538,9 +546,9 @@ MathJax.Hub.Queue(function() {
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
