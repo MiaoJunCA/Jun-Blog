@@ -48,9 +48,9 @@
     <link href="http://james97.github.io/2016/05/24/Something-about-MapReduce-1/"/>
     <id>http://james97.github.io/2016/05/24/Something-about-MapReduce-1/</id>
     <published>2016-05-24T13:17:34.000Z</published>
-    <updated>2016-05-24T15:06:31.000Z</updated>
+    <updated>2016-05-24T15:07:43.000Z</updated>
     
-    <content type="html">&lt;p&gt;MapReduce is the foundation of Big data manipulation. The idea was first introduced from Google &lt;a href=&quot;http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;paper&lt;/a&gt;. One thing I like the best for google papers is that they never bullshit. You will never see wordy and deeply-mathematical presentations which cannot help you understand the basic idea at all. They want to make their work simple and understandable. &lt;/p&gt;
+    <content type="html">&lt;p&gt;MapReduce is the foundation of Big data manipulation. The idea was first introduced from Google &lt;a href=&quot;http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;paper&lt;/a&gt;. One thing I like the best for google papers is that they never bullshit. You will never see wordy and deeply-mathematical presentations which cannot help you understand the basic idea at all. They want to make their work simple and understandable.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;The idea is MapReduce is straightforward, too. The &lt;strong&gt;Map&lt;/strong&gt; function processes a key/value pair to generate a set of intermediate key/value paris, and a &lt;strong&gt;reduce&lt;/strong&gt; function that merges all intermediate values associated with the same intermediate key. I guess the two authors may do a lot of duplicated work on Grep or building an inverted index so that they want to convert it into a paralleled process. Although they are lots of platforms which inherit the MapReduce structure and make it much easier to implement such work, e.g., Spark/Hive/Pig. It is still necessary to understand how it works. &lt;/p&gt;
 &lt;p&gt;Basically, MapReduce fits problems which can be divide-and-conquer. After division, each part of the problem can be solved separately and in a similar way. For example, a common example is word-count. When you have 100M documents and you want to get the word count for each term, you can count words in each 100 documents and add them together. For each 100 documents, you will get pairs like &lt;term, termcount=&quot;&quot;&gt;. The terms are natural keys for MapReduce while they are unique and the objects we work on. After the Map process, we will have lots of term-count pairs. Values for the same key term will be summed up and reduce the pairs. Finally, we will have a clean term-count pair list and no duplicated keys in it.&lt;/term,&gt;&lt;/p&gt;
 &lt;p&gt;So the common steps a MapReduce process should be:&lt;/p&gt;
@@ -77,7 +77,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;MapReduce is the foundation of Big data manipulation. The idea was first introduced from Google &lt;a href=&quot;http://static.googleusercontent.
+      &lt;p&gt;MapReduce is the foundation of Big data manipulation. The idea was first introduced from Google &lt;a href=&quot;http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf&quot;&gt;paper&lt;/a&gt;. One thing I like the best for google papers is that they never bullshit. You will never see wordy and deeply-mathematical presentations which cannot help you understand the basic idea at all. They want to make their work simple and understandable.&lt;br&gt;&lt;/p&gt;
     
     </summary>
     

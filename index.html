@@ -325,30 +325,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>MapReduce is the foundation of Big data manipulation. The idea was first introduced from Google <a href="http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf" target="_blank" rel="external">paper</a>. One thing I like the best for google papers is that they never bullshit. You will never see wordy and deeply-mathematical presentations which cannot help you understand the basic idea at all. They want to make their work simple and understandable. </p>
-<p>The idea is MapReduce is straightforward, too. The <strong>Map</strong> function processes a key/value pair to generate a set of intermediate key/value paris, and a <strong>reduce</strong> function that merges all intermediate values associated with the same intermediate key. I guess the two authors may do a lot of duplicated work on Grep or building an inverted index so that they want to convert it into a paralleled process. Although they are lots of platforms which inherit the MapReduce structure and make it much easier to implement such work, e.g., Spark/Hive/Pig. It is still necessary to understand how it works. </p>
-<p>Basically, MapReduce fits problems which can be divide-and-conquer. After division, each part of the problem can be solved separately and in a similar way. For example, a common example is word-count. When you have 100M documents and you want to get the word count for each term, you can count words in each 100 documents and add them together. For each 100 documents, you will get pairs like <term, termcount="">. The terms are natural keys for MapReduce while they are unique and the objects we work on. After the Map process, we will have lots of term-count pairs. Values for the same key term will be summed up and reduce the pairs. Finally, we will have a clean term-count pair list and no duplicated keys in it.</term,></p>
-<p>So the common steps a MapReduce process should be:</p>
-<ol>
-<li>Consider whether the problem can be divided into pieces and dealt with in the same way. If yes, whether the results of each piece can be combined to get the final outputs.</li>
-<li>Determine the key/value pairs for each piece. Of course, have to know the input source first and consider how to convert it into key/value pairs as well.</li>
-<li>The intermediate outputs from Mapper will be the inputs of the Reducer. Collect the values for the same key, and think about how to use them to get the final results.</li>
-</ol>
-<p>Looks simple. Right? There are some other mechanisms to ensure the MapReduce model to be fault-tolerant, load-balance&#x2026; But so far these are not my concerns. There are some examples in the google paper. </p>
-<ul>
-<li>Word Count. </li>
-</ul>
-<p><img src="/Jun-blog/2016/05/24/Something-about-MapReduce-1/wordcount.png" alt=""></p>
-<ul>
-<li>Distributed Grep. Mapper will emit a line if it matches a supplied pattern. Reducer just copy the supplied intermediate data to the output. So what are the keys? Seems we can use doc_id+line_num</li>
-<li>Count of URL access Frequency. Just like word count, replace words to URLs.</li>
-<li>Reverse Web-Link Graph. Mapper outputs <target, source="">. Targets are the links in the Source page. Reduces will concatenate the list of all source URL associated with a given target URL and emits <targes, list(source)="">. </targes,></target,></li>
-<li>Term-Vector per Host. A term vector summarizes the<br>most important words that occur in a document or a set<br>of documents as a list of <word, frequency=""> pairs. The<br>map function emits a <hostname, term=""> vector<br>pair for each input document (where the hostname is<br>extracted from the URL of the document). The reduce<br>function is passed all per-document term vectors<br>for a given host. It adds these term vectors together,<br>throwing away infrequent terms, and then emits a final<br><hostname, term="" vector=""> pair.</hostname,></hostname,></word,></li>
-<li>Inverted Index. Each documents will be put into Mapper. The Mapper will emit <term, docid=""> pairs, and the Reduces will concatenate all the docids and make a list. The outputs will be <term, list(docids)="">. If we make docid and term position together, we can also store this information.</term,></term,></li>
-<li>Distributed sort. This is a little bit tricky to determine the key/value. We can&#x2019;t just implement it like a merge sort while merge sort only has sub lists. So the strategy is Hash each line of the text to a particular reducer to make sure that $K_1$ &lt; $K_2$ =&gt; hash($K_1$) =&gt; hash($K_2$). If the keys are the prefixes of each line, then make sure the intermediate values are sent to reducer based on their prefix orders.</li>
-</ul>
-<p>More examples can be found <a href="https://courses.cs.washington.edu/courses/cse490h/08au/lectures/algorithms.pdf" target="_blank" rel="external">Here</a>.</p>
-
+              <p>MapReduce is the foundation of Big data manipulation. The idea was first introduced from Google <a href="http://static.googleusercontent.com/media/research.google.com/zh-CN//archive/mapreduce-osdi04.pdf">paper</a>. One thing I like the best for google papers is that they never bullshit. You will never see wordy and deeply-mathematical presentations which cannot help you understand the basic idea at all. They want to make their work simple and understandable.<br></p>
+          
       
     </div>
     
@@ -366,6 +344,10 @@
     </div>
 
 
+      
+        <p class="article-more-link">
+          <a href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
