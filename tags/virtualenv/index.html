@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>insert local image for hexo sites | Jun&#39;s Note Blog</title>
+  <title>Tag: virtualenv | Jun&#39;s Note Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? 
-I have">
-<meta property="og:type" content="article">
-<meta property="og:title" content="insert local image for hexo sites">
-<meta property="og:url" content="http://james97.github.io/2016/05/24/insert-local-image-for-hexo-sites/index.html">
+  <meta name="description" content="Records of Data mining, Natural language processing, Information retrieval, Programming and Time Management Notes">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jun's Note Blog">
+<meta property="og:url" content="http://james97.github.io/tags/virtualenv/index.html">
 <meta property="og:site_name" content="Jun's Note Blog">
-<meta property="og:description" content="It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? 
-I have">
-<meta property="og:image" content="http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png">
-<meta property="og:updated_time" content="2016-05-24T13:53:27.000Z">
+<meta property="og:description" content="Records of Data mining, Natural language processing, Information retrieval, Programming and Time Management Notes">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="insert local image for hexo sites">
-<meta name="twitter:description" content="It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? 
-I have">
-<meta name="twitter:image" content="http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png">
+<meta name="twitter:title" content="Jun's Note Blog">
+<meta name="twitter:description" content="Records of Data mining, Natural language processing, Information retrieval, Programming and Time Management Notes">
   
     <link rel="alternative" href="/atom.xml" title="Jun&#39;s Note Blog" type="application/atom+xml">
   
@@ -48,9 +42,9 @@ I have">
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: true,
+          isPost: false,
           isArchive: false,
-          isTag: false,
+          isTag: true,
           isCategory: false,
           open_in_new: false,
       }
@@ -235,195 +229,59 @@ I have">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-insert-local-image-for-hexo-sites" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/" class="article-date">
-      <time datetime="2016-05-24T13:18:04.000Z" itemprop="datePublished">2016-05-24</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/Jun-blog/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/" class="archive-article-date">
+      <time datetime="2016-10-06T00:11:43.000Z" itemprop="datePublished">10-05</time>
 </a>
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      insert local image for hexo sites
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/">How to set python version in virtualenv</a>
     </h1>
   
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/plugin/">plugin</a></li></ul>
-    </div>
-
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p>It is very common to insert images into a markdown file. Usually, we can easily make this by &#x201C;![]()&#x201D; and put the URL of the pictures into (). How can we deal with local pictures? </p>
-<p>I have to say, if editors like MacDown can be associated to Hexo better, that will be as awesome as <a href="https://marxi.co/" target="_blank" rel="external">Marxico</a>. The latter can automatically put your snapped figures into local ones, insert links into your md file and convert your md to a Evernote note. You don&#x2019;t even know where the figures are really stored! </p>
-<p>The good thing is we have a plugin named <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">hexo-asset-image</a>. Just enter your hexo folder, run <code>npm install hexo-asset-image --save</code> , and then make sure you have post_asset_folder: true in your _config.yml. Beware, <strong>_config.yml in your hexo folder, not the one in your theme folder</strong>. </p>
-<p>After that, when you create a new post by hexo -n, a new folder with the same name as your post will be created. So the structure will be like <img src="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png" alt="this">. Got this! Then just use <code>![logo](MacGesture2-Publish/logo.jpg)</code> to insert logo.jpg to insert the figure.</p>
-
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>Title:</span><a href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/">insert local image for hexo sites</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Jun (James) Miao</a></p>
-        <p><span>Created:</span>2016-05-24, 09:18:04</p>
-        <p><span>Updated:</span>2016-05-24, 09:53:27</p>
-        <p>
-            <span>Full URL:</span><a class="post-url" href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/" title="insert local image for hexo sites">http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/</a>
-            <span class="copy-path" data-clipboard-text="From http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
-        </p>
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/Jun-blog/categories/programming/">programming</a>
     </div>
 
 
-
-    <nav id="article-nav">
-        
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/">
-                    How to set python version in virtualenv
-                </a>
-            </div>
-        
-        
-            <div id="article-nav-older" class="article-nav-title">
-                <a href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/">
-                    Something about MapReduce(1)
-                </a>
-            </div>
-        
-    </nav>
-
-  
-</article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
-    
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-
-<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
-<script>
-    var valueHide = "Hide";
-    var valueShow = "Show";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/virtualenv/">virtualenv</a></li></ul>
+    </div>
 
 
-
-
-
-    
-<div class="share">
-    
-        <div class="bdsharebuttonbox">
-            <li id="bds_twi"><a href="#" class="bds_twi" data-cmd="twi" title="分享到推特"></a></li>
-            <li id="bds_tsina"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a></li>
-            <li id="bds_sqq"><a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a></li>
-            <li id="bds_copy"><a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a></li>
-            <li id="bds_mail"><a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a></li>
-            <li id="bds_weixin"><a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a></li>
-            <li id="bds_more"><a href="#" class="bds_more" data-cmd="more"></i></a></li>
         </div>
-        <script>
-            window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"insert local image for hexo sites　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-        </script>
-    
-
-    
-</div>
-
-
-
-
-
-
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
     
 
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/" title="Pre: How to set python version in virtualenv">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-
-        
-            <a href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/" title="Next: Something about MapReduce(1)">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/">How to set python version in virtualenv</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/">insert local image for hexo sites</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/">Something about MapReduce(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/20/Machine-Learning-Concepts-2/">Machine Learning Concepts (2)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/18/Machine-Learning-Concepts/">Machine Learning Concepts(1)</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/">Build a light blog on Github by Hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/Jun-blog/2016/04/13/hello-world/">Hello World</a></li></ul>
-
-
-
-
-    <script>
-        
-    </script>
 </div>
       <footer id="footer">
     <div class="outer">

@@ -5,7 +5,7 @@
   <link href="/Jun-blog/atom.xml" rel="self"/>
   
   <link href="http://james97.github.io/"/>
-  <updated>2016-05-24T13:53:27.000Z</updated>
+  <updated>2016-10-06T01:41:59.000Z</updated>
   <id>http://james97.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to set python version in virtualenv</title>
+    <link href="http://james97.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/"/>
+    <id>http://james97.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/</id>
+    <published>2016-10-06T00:11:43.000Z</published>
+    <updated>2016-10-06T01:41:59.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Recently I need to use Python 3.5 instead of Python 2.7, so I use virtualenv to build a particular environment for this project.&lt;/p&gt;
+&lt;p&gt;One way is set it when creating the virtual environment&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkvirtualenv --python=/usr/bin/python3 nameOfEnvironment&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The second way is adding this line to the bashrc file:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;export&lt;/span&gt; VIRTUALENV_PYTHON=/usr/bin/python3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Recently I need to use Python 3.5 instead of Python 2.7, so I use virtualenv to build a particular environment for this project.&lt;/p&gt;
+&lt;p&gt;O
+    
+    </summary>
+    
+      <category term="programming" scheme="http://james97.github.io/categories/programming/"/>
+    
+    
+      <category term="programming" scheme="http://james97.github.io/tags/programming/"/>
+    
+      <category term="python" scheme="http://james97.github.io/tags/python/"/>
+    
+      <category term="virtualenv" scheme="http://james97.github.io/tags/virtualenv/"/>
+    
+  </entry>
   
   <entry>
     <title>insert local image for hexo sites</title>
