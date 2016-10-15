@@ -5,7 +5,7 @@
   <link href="/Jun-blog/atom.xml" rel="self"/>
   
   <link href="http://james97.github.io/"/>
-  <updated>2016-10-06T01:41:59.000Z</updated>
+  <updated>2016-10-15T23:30:37.000Z</updated>
   <id>http://james97.github.io/</id>
   
   <author>
@@ -14,6 +14,88 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Understanding character encoding</title>
+    <link href="http://james97.github.io/2016/10/05/Understanding-character-encoding/"/>
+    <id>http://james97.github.io/2016/10/05/Understanding-character-encoding/</id>
+    <published>2016-10-06T01:48:06.000Z</published>
+    <updated>2016-10-15T23:30:37.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Different charset encodings have confused me for a long time. When I use python or Java to deal with texts, when and how to encode/decode them are always questions for me. Now, it is time to understand the issue thoroughly!&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&quot;Why-so-many-charsets&quot;&gt;&lt;a href=&quot;#Why-so-many-charsets&quot; class=&quot;headerlink&quot; title=&quot;Why so many charsets?&quot;&gt;&lt;/a&gt;Why so many charsets?&lt;/h5&gt;&lt;p&gt;At the very beginning, there was only one code for english: Ascii. Use 1 byte to represent 256 chars. Actually, only half of the codes were used(under \x80). &lt;/p&gt;
+&lt;p&gt;However, there are so many languages in the world, and we need to encode most of them into computer system. Obviously, 1 byte was not enough. Then, how about 2 or 4 bytes? That was the idea! Different languages used different sizes of bytes for representations. If the first byte is below \x80, then it is an Ascii code. Otherwise, read the next byte and make it a &amp;#x2018;word&amp;#x2019;, skip the next byte and go on. Theoretically, 2bytes can represent 65536 chars for a particular language. But for some like Chinese, that is not enough. So some Chinese chars cannot be recognized correctly in computer systems.&lt;/p&gt;
+&lt;p&gt;MBCS(Multiple-byte Character set) is the set of this kind of encoding methods. &lt;/p&gt;
+&lt;h5 id=&quot;How-about-use-one-charset-for-all&quot;&gt;&lt;a href=&quot;#How-about-use-one-charset-for-all&quot; class=&quot;headerlink&quot; title=&quot;How about use one charset for all?&quot;&gt;&lt;/a&gt;How about use one charset for all?&lt;/h5&gt;&lt;p&gt;That is an intuitive question. Just use more bytes and include all chars in the world! Of course, that the reason we have unicode. Now it can have more than 1M chars and every char has its unique code. E.g., U+0041 is &amp;#x2018;A&amp;#x2019; in English, and U+4E25 is &amp;#x2018;&amp;#x4E25;&amp;#x2019; in Chinese. Perfect! Isn&amp;#x2019;t it?&lt;/p&gt;
+&lt;h5 id=&quot;New-problem&quot;&gt;&lt;a href=&quot;#New-problem&quot; class=&quot;headerlink&quot; title=&quot;New problem&quot;&gt;&lt;/a&gt;New problem&lt;/h5&gt;&lt;p&gt;As I mentioned above, different languages have their own encoding method, like in MBCS. If we use unicode, how can we know that language we should recognize? U+4E25 need 15 bits, and some char need more. Also, how do we know a char is stored in unicode or ascii? One may say we can define the length of unicode to be 4 or 8 bytes, which should be enough for all languages. The generated problem is that we have to pad lots of 0s for English chars. That is a waste!&lt;/p&gt;
+&lt;h5 id=&quot;Compromise-Utf-8-and-Utf-16&quot;&gt;&lt;a href=&quot;#Compromise-Utf-8-and-Utf-16&quot; class=&quot;headerlink&quot; title=&quot;Compromise: Utf-8 and Utf-16&quot;&gt;&lt;/a&gt;Compromise: Utf-8 and Utf-16&lt;/h5&gt;&lt;p&gt;Using a unified encoding/decoding system is necessary for the world. UTF-8 and UTF-16 were born for this. Both of them are the implementation of Unicode. UTF-8 is the most popular one, and it is also the default encoding method for most editors. It has two rules:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For 1-byte chars, the first bit is always 0. The following 7 bits are Unicode code. So for English chars, they have the same utf-8 and ascii code. &lt;/li&gt;
+&lt;li&gt;For multi-byte, e.g., n chars, the first n bits of the first byte are always 1, and the &lt;strong&gt;n+1&lt;/strong&gt;-th bit is 0. The first two bits of the rest bytes are set to 10, and the remain bits are the unicode of the char. &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;UTF-16 uses 2 or 4 bytes while UTF-8 can be as short as 1 byte. Because of the byte limit, some chars cannot be shown in UTF-8 or UTF-16, but most regular chars are good in use. &lt;/p&gt;
+&lt;p&gt;Here is a small table for determining how many bytes UTF-8 will use for a char.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Unicode&lt;/th&gt;
+&lt;th style=&quot;text-align:center&quot;&gt;UTF-8 Code&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;0000 0000-0000 007F&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;0xxxxxxx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0000 0080-0000 07FF&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;110xxxxx 10xxxxxx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0000 0800-0000 FFFF&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;1110xxxx 10xxxxxx 10xxxxxx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;0001 0000-0010 FFFF&lt;/td&gt;
+&lt;td style=&quot;text-align:center&quot;&gt;11110xxx 10xxxxxx 10xxxxxx 10xxxxxx&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id=&quot;ANSI&quot;&gt;&lt;a href=&quot;#ANSI&quot; class=&quot;headerlink&quot; title=&quot;ANSI&quot;&gt;&lt;/a&gt;ANSI&lt;/h5&gt;&lt;p&gt;Sometimes we see ANSI for encoding. What is that? For English files, ANSI is ASCII; For Chinese files, it is GB2313 or Big5&lt;/p&gt;
+&lt;h5 id=&quot;How-about-in-Python&quot;&gt;&lt;a href=&quot;#How-about-in-Python&quot; class=&quot;headerlink&quot; title=&quot;How about in Python&quot;&gt;&lt;/a&gt;How about in Python&lt;/h5&gt;&lt;p&gt;Yes. I met plenty of encoding errors in my Python programs and that made me crazy. This is also the reason of writing this blog. It is common to see &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;#x201C;UnicodeEncodeError: &amp;#x2018;ascii&amp;#x2019; codec can&amp;#x2019;t encode characters in position 0-1: ordinal not in range(128)&amp;#x201D;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;and other similar ones. If you have special chars like Chinese in your source code, put&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;# -&lt;em&gt;- coding: utf-8 -&lt;/em&gt;-&lt;br&gt;on the top of your file. &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;If this happens because you are processing some non-english data, you need something else. In python 2.x, we have decode and encode methods for string. How to use them? Remember unicode? That is the common &amp;#x2018;language&amp;#x2019; for all encoding systems. So &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;decode() will decode the string into unicode. E.g., str1.decode(&amp;#x2018;gb2312&amp;#x2019;) will decode the gb2312 string into unicode&lt;br&gt;encode(), obviously, will convert the string to a code other than unicode. str2.encode(&amp;#x2018;gb2312&amp;#x2019;) will convert the unicode str2 into gb2312.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;So always figure out what is the current charset. Otherwise, you can&amp;#x2019;t successfully convert strings. Can use &lt;strong&gt;sys.getdefaultencoding()&lt;/strong&gt; to get the current encoding system.&lt;/p&gt;
+&lt;p&gt;Btw, if you use &amp;#x2018;u&amp;#x2019; in python files, e.g., s=u&amp;#x2019;&amp;#x4E2D;&amp;#x6587;&amp;#x2019; means s is a unicode string. &lt;/p&gt;
+&lt;p&gt;Some IDE will show wrong chars in console. The reason is that it has its own encoding system for console output. If the encoding system is ascii, you will get error even if you define a Chinese string s in unicode. In this case, encoding the string before you print.  &lt;/p&gt;
+&lt;h5 id=&quot;Python3-Something-new&quot;&gt;&lt;a href=&quot;#Python3-Something-new&quot; class=&quot;headerlink&quot; title=&quot;Python3? Something new&quot;&gt;&lt;/a&gt;Python3? Something new&lt;/h5&gt;&lt;p&gt;In python3, all strings are in unicode by default. A new data type &lt;strong&gt;bytes&lt;/strong&gt; is introduced. It is actually used for ascii chars.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;a = &lt;span class=&quot;string&quot;&gt;b&amp;apos;byte literal&amp;apos;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;a[&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;number&quot;&gt;121&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;See? Every element in the string is a 0-127 ascii char. A bytes object can be converted into a unicode string by decode(). Again, because now every string is in unicode, strings only have encode() method now. &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Different charset encodings have confused me for a long time. When I use python or Java to deal with texts, when and how to encode/decode them are always questions for me. Now, it is time to understand the issue thoroughly!&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="programming" scheme="http://james97.github.io/categories/programming/"/>
+    
+    
+      <category term="programming" scheme="http://james97.github.io/tags/programming/"/>
+    
+      <category term="python" scheme="http://james97.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>How to set python version in virtualenv</title>

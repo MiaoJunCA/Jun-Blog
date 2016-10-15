@@ -3,23 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>insert local image for hexo sites | Jun&#39;s Note Blog</title>
+  <title>Understanding character encoding | Jun&#39;s Note Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? 
-I have">
+  <meta name="description" content="Different charset encodings have confused me for a long time. When I use python or Java to deal with texts, when and how to encode/decode them are always questions for me. Now, it is time to understan">
 <meta property="og:type" content="article">
-<meta property="og:title" content="insert local image for hexo sites">
-<meta property="og:url" content="http://james97.github.io/2016/05/24/insert-local-image-for-hexo-sites/index.html">
+<meta property="og:title" content="Understanding character encoding">
+<meta property="og:url" content="http://james97.github.io/2016/10/05/Understanding-character-encoding/index.html">
 <meta property="og:site_name" content="Jun's Note Blog">
-<meta property="og:description" content="It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? 
-I have">
-<meta property="og:image" content="http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png">
-<meta property="og:updated_time" content="2016-05-24T13:53:27.000Z">
+<meta property="og:description" content="Different charset encodings have confused me for a long time. When I use python or Java to deal with texts, when and how to encode/decode them are always questions for me. Now, it is time to understan">
+<meta property="og:updated_time" content="2016-10-15T23:30:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="insert local image for hexo sites">
-<meta name="twitter:description" content="It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? 
-I have">
-<meta name="twitter:image" content="http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png">
+<meta name="twitter:title" content="Understanding character encoding">
+<meta name="twitter:description" content="Different charset encodings have confused me for a long time. When I use python or Java to deal with texts, when and how to encode/decode them are always questions for me. Now, it is time to understan">
   
     <link rel="alternative" href="/atom.xml" title="Jun&#39;s Note Blog" type="application/atom+xml">
   
@@ -235,11 +230,11 @@ I have">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-insert-local-image-for-hexo-sites" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Understanding-character-encoding" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/" class="article-date">
-      <time datetime="2016-05-24T13:18:04.000Z" itemprop="datePublished">2016-05-24</time>
+      <a href="/Jun-blog/2016/10/05/Understanding-character-encoding/" class="article-date">
+      <time datetime="2016-10-06T01:48:06.000Z" itemprop="datePublished">2016-10-05</time>
 </a>
     </div>
   
@@ -252,7 +247,7 @@ I have">
         
   
     <h1 class="article-title" itemprop="name">
-      insert local image for hexo sites
+      Understanding character encoding
     </h1>
   
 
@@ -260,10 +255,14 @@ I have">
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/Jun-blog/categories/programming/">programming</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/plugin/">plugin</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/programming/">programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-blog/tags/python/">python</a></li></ul>
     </div>
 
 
@@ -274,10 +273,64 @@ I have">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>It is very common to insert images into a markdown file. Usually, we can easily make this by &#x201C;![]()&#x201D; and put the URL of the pictures into (). How can we deal with local pictures? </p>
-<p>I have to say, if editors like MacDown can be associated to Hexo better, that will be as awesome as <a href="https://marxi.co/" target="_blank" rel="external">Marxico</a>. The latter can automatically put your snapped figures into local ones, insert links into your md file and convert your md to a Evernote note. You don&#x2019;t even know where the figures are really stored! </p>
-<p>The good thing is we have a plugin named <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">hexo-asset-image</a>. Just enter your hexo folder, run <code>npm install hexo-asset-image --save</code> , and then make sure you have post_asset_folder: true in your _config.yml. Beware, <strong>_config.yml in your hexo folder, not the one in your theme folder</strong>. </p>
-<p>After that, when you create a new post by hexo -n, a new folder with the same name as your post will be created. So the structure will be like <img src="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png" alt="this">. Got this! Then just use <code>![logo](MacGesture2-Publish/logo.jpg)</code> to insert logo.jpg to insert the figure.</p>
+        <p>Different charset encodings have confused me for a long time. When I use python or Java to deal with texts, when and how to encode/decode them are always questions for me. Now, it is time to understand the issue thoroughly!<br><a id="more"></a></p>
+<h5 id="Why-so-many-charsets"><a href="#Why-so-many-charsets" class="headerlink" title="Why so many charsets?"></a>Why so many charsets?</h5><p>At the very beginning, there was only one code for english: Ascii. Use 1 byte to represent 256 chars. Actually, only half of the codes were used(under \x80). </p>
+<p>However, there are so many languages in the world, and we need to encode most of them into computer system. Obviously, 1 byte was not enough. Then, how about 2 or 4 bytes? That was the idea! Different languages used different sizes of bytes for representations. If the first byte is below \x80, then it is an Ascii code. Otherwise, read the next byte and make it a &#x2018;word&#x2019;, skip the next byte and go on. Theoretically, 2bytes can represent 65536 chars for a particular language. But for some like Chinese, that is not enough. So some Chinese chars cannot be recognized correctly in computer systems.</p>
+<p>MBCS(Multiple-byte Character set) is the set of this kind of encoding methods. </p>
+<h5 id="How-about-use-one-charset-for-all"><a href="#How-about-use-one-charset-for-all" class="headerlink" title="How about use one charset for all?"></a>How about use one charset for all?</h5><p>That is an intuitive question. Just use more bytes and include all chars in the world! Of course, that the reason we have unicode. Now it can have more than 1M chars and every char has its unique code. E.g., U+0041 is &#x2018;A&#x2019; in English, and U+4E25 is &#x2018;&#x4E25;&#x2019; in Chinese. Perfect! Isn&#x2019;t it?</p>
+<h5 id="New-problem"><a href="#New-problem" class="headerlink" title="New problem"></a>New problem</h5><p>As I mentioned above, different languages have their own encoding method, like in MBCS. If we use unicode, how can we know that language we should recognize? U+4E25 need 15 bits, and some char need more. Also, how do we know a char is stored in unicode or ascii? One may say we can define the length of unicode to be 4 or 8 bytes, which should be enough for all languages. The generated problem is that we have to pad lots of 0s for English chars. That is a waste!</p>
+<h5 id="Compromise-Utf-8-and-Utf-16"><a href="#Compromise-Utf-8-and-Utf-16" class="headerlink" title="Compromise: Utf-8 and Utf-16"></a>Compromise: Utf-8 and Utf-16</h5><p>Using a unified encoding/decoding system is necessary for the world. UTF-8 and UTF-16 were born for this. Both of them are the implementation of Unicode. UTF-8 is the most popular one, and it is also the default encoding method for most editors. It has two rules:</p>
+<ol>
+<li>For 1-byte chars, the first bit is always 0. The following 7 bits are Unicode code. So for English chars, they have the same utf-8 and ascii code. </li>
+<li>For multi-byte, e.g., n chars, the first n bits of the first byte are always 1, and the <strong>n+1</strong>-th bit is 0. The first two bits of the rest bytes are set to 10, and the remain bits are the unicode of the char. </li>
+</ol>
+<p>UTF-16 uses 2 or 4 bytes while UTF-8 can be as short as 1 byte. Because of the byte limit, some chars cannot be shown in UTF-8 or UTF-16, but most regular chars are good in use. </p>
+<p>Here is a small table for determining how many bytes UTF-8 will use for a char.</p>
+<table>
+<thead>
+<tr>
+<th>Unicode</th>
+<th style="text-align:center">UTF-8 Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000 0000-0000 007F</td>
+<td style="text-align:center">0xxxxxxx</td>
+</tr>
+<tr>
+<td>0000 0080-0000 07FF</td>
+<td style="text-align:center">110xxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0000 0800-0000 FFFF</td>
+<td style="text-align:center">1110xxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+<tr>
+<td>0001 0000-0010 FFFF</td>
+<td style="text-align:center">11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</td>
+</tr>
+</tbody>
+</table>
+<h5 id="ANSI"><a href="#ANSI" class="headerlink" title="ANSI"></a>ANSI</h5><p>Sometimes we see ANSI for encoding. What is that? For English files, ANSI is ASCII; For Chinese files, it is GB2313 or Big5</p>
+<h5 id="How-about-in-Python"><a href="#How-about-in-Python" class="headerlink" title="How about in Python"></a>How about in Python</h5><p>Yes. I met plenty of encoding errors in my Python programs and that made me crazy. This is also the reason of writing this blog. It is common to see </p>
+<blockquote>
+<p>&#x201C;UnicodeEncodeError: &#x2018;ascii&#x2019; codec can&#x2019;t encode characters in position 0-1: ordinal not in range(128)&#x201D;</p>
+</blockquote>
+<p>and other similar ones. If you have special chars like Chinese in your source code, put</p>
+<blockquote>
+<p># -<em>- coding: utf-8 -</em>-<br>on the top of your file. </p>
+</blockquote>
+<p>If this happens because you are processing some non-english data, you need something else. In python 2.x, we have decode and encode methods for string. How to use them? Remember unicode? That is the common &#x2018;language&#x2019; for all encoding systems. So </p>
+<blockquote>
+<p>decode() will decode the string into unicode. E.g., str1.decode(&#x2018;gb2312&#x2019;) will decode the gb2312 string into unicode<br>encode(), obviously, will convert the string to a code other than unicode. str2.encode(&#x2018;gb2312&#x2019;) will convert the unicode str2 into gb2312.</p>
+</blockquote>
+<p>So always figure out what is the current charset. Otherwise, you can&#x2019;t successfully convert strings. Can use <strong>sys.getdefaultencoding()</strong> to get the current encoding system.</p>
+<p>Btw, if you use &#x2018;u&#x2019; in python files, e.g., s=u&#x2019;&#x4E2D;&#x6587;&#x2019; means s is a unicode string. </p>
+<p>Some IDE will show wrong chars in console. The reason is that it has its own encoding system for console output. If the encoding system is ascii, you will get error even if you define a Chinese string s in unicode. In this case, encoding the string before you print.  </p>
+<h5 id="Python3-Something-new"><a href="#Python3-Something-new" class="headerlink" title="Python3? Something new"></a>Python3? Something new</h5><p>In python3, all strings are in unicode by default. A new data type <strong>bytes</strong> is introduced. It is actually used for ascii chars.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="string">b&apos;byte literal&apos;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a[<span class="number">1</span>]</span><br><span class="line"><span class="number">121</span></span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure>
+<p>See? Every element in the string is a 0-127 ascii char. A bytes object can be converted into a unicode string by decode(). Again, because now every string is in unicode, strings only have encode() method now. </p>
 
       
     </div>
@@ -286,13 +339,13 @@ I have">
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/">insert local image for hexo sites</a></p>
+        <p><span>本文标题:</span><a href="/Jun-blog/2016/10/05/Understanding-character-encoding/">Understanding character encoding</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Jun (James) Miao</a></p>
-        <p><span>发布时间:</span>2016-05-24, 09:18:04</p>
-        <p><span>最后更新:</span>2016-05-24, 09:53:27</p>
+        <p><span>发布时间:</span>2016-10-05, 21:48:06</p>
+        <p><span>最后更新:</span>2016-10-15, 19:30:37</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/" title="insert local image for hexo sites">http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://james97.github.io/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/　　作者: Jun (James) Miao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/Jun-blog/2016/10/05/Understanding-character-encoding/" title="Understanding character encoding">http://james97.github.io/Jun-blog/2016/10/05/Understanding-character-encoding/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://james97.github.io/Jun-blog/2016/10/05/Understanding-character-encoding/　　作者: Jun (James) Miao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -305,16 +358,10 @@ I have">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/">
-                    How to set python version in virtualenv
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/">
-                    Something about MapReduce(1)
+                <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/">
+                    How to set python version in virtualenv
                 </a>
             </div>
         
@@ -325,7 +372,7 @@ I have">
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Why-so-many-charsets"><span class="toc-number">1.</span> <span class="toc-text">Why so many charsets?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#How-about-use-one-charset-for-all"><span class="toc-number">2.</span> <span class="toc-text">How about use one charset for all?</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#New-problem"><span class="toc-number">3.</span> <span class="toc-text">New problem</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Compromise-Utf-8-and-Utf-16"><span class="toc-number">4.</span> <span class="toc-text">Compromise: Utf-8 and Utf-16</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ANSI"><span class="toc-number">5.</span> <span class="toc-text">ANSI</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#How-about-in-Python"><span class="toc-number">6.</span> <span class="toc-text">How about in Python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Python3-Something-new"><span class="toc-number">7.</span> <span class="toc-text">Python3? Something new</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -382,7 +429,7 @@ I have">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"insert local image for hexo sites　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Understanding character encoding　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -402,15 +449,13 @@ I have">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/" title="上一篇: How to set python version in virtualenv">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/Jun-blog/2016/05/24/Something-about-MapReduce-1/" title="下一篇: Something about MapReduce(1)">
+            <a href="/Jun-blog/2016/10/05/How-to-set-python-version-in-virtualenv/" title="下一篇: How to set python version in virtualenv">
                 <i class="fa fa-angle-right"></i>
             </a>
         
