@@ -4,9 +4,9 @@
   
   <link href="/Jun-blog/atom.xml" rel="self"/>
   
-  <link href="http://james97.github.io/"/>
+  <link href="https://miaojunca.github.io/"/>
   <updated>2016-10-15T23:30:37.000Z</updated>
-  <id>http://james97.github.io/</id>
+  <id>https://miaojunca.github.io/</id>
   
   <author>
     <name>Jun (James) Miao</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Understanding character encoding</title>
-    <link href="http://james97.github.io/2016/10/05/Understanding-character-encoding/"/>
-    <id>http://james97.github.io/2016/10/05/Understanding-character-encoding/</id>
+    <link href="https://miaojunca.github.io/2016/10/05/Understanding-character-encoding/"/>
+    <id>https://miaojunca.github.io/2016/10/05/Understanding-character-encoding/</id>
     <published>2016-10-06T01:48:06.000Z</published>
     <updated>2016-10-15T23:30:37.000Z</updated>
     
@@ -88,19 +88,19 @@
     
     </summary>
     
-      <category term="programming" scheme="http://james97.github.io/categories/programming/"/>
+      <category term="programming" scheme="https://miaojunca.github.io/categories/programming/"/>
     
     
-      <category term="programming" scheme="http://james97.github.io/tags/programming/"/>
+      <category term="programming" scheme="https://miaojunca.github.io/tags/programming/"/>
     
-      <category term="python" scheme="http://james97.github.io/tags/python/"/>
+      <category term="python" scheme="https://miaojunca.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>How to set python version in virtualenv</title>
-    <link href="http://james97.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/"/>
-    <id>http://james97.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/</id>
+    <link href="https://miaojunca.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/"/>
+    <id>https://miaojunca.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/</id>
     <published>2016-10-06T00:11:43.000Z</published>
     <updated>2016-10-06T01:41:59.000Z</updated>
     
@@ -118,21 +118,21 @@
     
     </summary>
     
-      <category term="programming" scheme="http://james97.github.io/categories/programming/"/>
+      <category term="programming" scheme="https://miaojunca.github.io/categories/programming/"/>
     
     
-      <category term="programming" scheme="http://james97.github.io/tags/programming/"/>
+      <category term="programming" scheme="https://miaojunca.github.io/tags/programming/"/>
     
-      <category term="python" scheme="http://james97.github.io/tags/python/"/>
+      <category term="python" scheme="https://miaojunca.github.io/tags/python/"/>
     
-      <category term="virtualenv" scheme="http://james97.github.io/tags/virtualenv/"/>
+      <category term="virtualenv" scheme="https://miaojunca.github.io/tags/virtualenv/"/>
     
   </entry>
   
   <entry>
     <title>insert local image for hexo sites</title>
-    <link href="http://james97.github.io/2016/05/24/insert-local-image-for-hexo-sites/"/>
-    <id>http://james97.github.io/2016/05/24/insert-local-image-for-hexo-sites/</id>
+    <link href="https://miaojunca.github.io/2016/05/24/insert-local-image-for-hexo-sites/"/>
+    <id>https://miaojunca.github.io/2016/05/24/insert-local-image-for-hexo-sites/</id>
     <published>2016-05-24T13:18:04.000Z</published>
     <updated>2016-05-24T13:53:27.000Z</updated>
     
@@ -149,18 +149,18 @@
     </summary>
     
     
-      <category term="hexo" scheme="http://james97.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://miaojunca.github.io/tags/hexo/"/>
     
-      <category term="markdown" scheme="http://james97.github.io/tags/markdown/"/>
+      <category term="markdown" scheme="https://miaojunca.github.io/tags/markdown/"/>
     
-      <category term="plugin" scheme="http://james97.github.io/tags/plugin/"/>
+      <category term="plugin" scheme="https://miaojunca.github.io/tags/plugin/"/>
     
   </entry>
   
   <entry>
     <title>Something about MapReduce(1)</title>
-    <link href="http://james97.github.io/2016/05/24/Something-about-MapReduce-1/"/>
-    <id>http://james97.github.io/2016/05/24/Something-about-MapReduce-1/</id>
+    <link href="https://miaojunca.github.io/2016/05/24/Something-about-MapReduce-1/"/>
+    <id>https://miaojunca.github.io/2016/05/24/Something-about-MapReduce-1/</id>
     <published>2016-05-24T13:17:34.000Z</published>
     <updated>2016-05-24T15:07:43.000Z</updated>
     
@@ -195,19 +195,19 @@
     
     </summary>
     
-      <category term="Big Data" scheme="http://james97.github.io/categories/Big-Data/"/>
+      <category term="Big Data" scheme="https://miaojunca.github.io/categories/Big-Data/"/>
     
     
-      <category term="MapReduce" scheme="http://james97.github.io/tags/MapReduce/"/>
+      <category term="MapReduce" scheme="https://miaojunca.github.io/tags/MapReduce/"/>
     
-      <category term="Big data" scheme="http://james97.github.io/tags/Big-data/"/>
+      <category term="Big data" scheme="https://miaojunca.github.io/tags/Big-data/"/>
     
   </entry>
   
   <entry>
     <title>Solve a machine learning problem step by step</title>
-    <link href="http://james97.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/"/>
-    <id>http://james97.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</id>
+    <link href="https://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/"/>
+    <id>https://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</id>
     <published>2016-04-26T18:32:11.000Z</published>
     <updated>2016-04-26T18:45:30.000Z</updated>
     
@@ -268,16 +268,16 @@
     </summary>
     
     
-      <category term="machine learning" scheme="http://james97.github.io/tags/machine-learning/"/>
+      <category term="machine learning" scheme="https://miaojunca.github.io/tags/machine-learning/"/>
     
-      <category term="data mining" scheme="http://james97.github.io/tags/data-mining/"/>
+      <category term="data mining" scheme="https://miaojunca.github.io/tags/data-mining/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Concepts (2)</title>
-    <link href="http://james97.github.io/2016/04/20/Machine-Learning-Concepts-2/"/>
-    <id>http://james97.github.io/2016/04/20/Machine-Learning-Concepts-2/</id>
+    <link href="https://miaojunca.github.io/2016/04/20/Machine-Learning-Concepts-2/"/>
+    <id>https://miaojunca.github.io/2016/04/20/Machine-Learning-Concepts-2/</id>
     <published>2016-04-20T13:51:09.000Z</published>
     <updated>2016-04-20T17:27:25.000Z</updated>
     
@@ -298,19 +298,19 @@
     
     </summary>
     
-      <category term="machine learning" scheme="http://james97.github.io/categories/machine-learning/"/>
+      <category term="machine learning" scheme="https://miaojunca.github.io/categories/machine-learning/"/>
     
     
-      <category term="machine learning" scheme="http://james97.github.io/tags/machine-learning/"/>
+      <category term="machine learning" scheme="https://miaojunca.github.io/tags/machine-learning/"/>
     
-      <category term="data mining" scheme="http://james97.github.io/tags/data-mining/"/>
+      <category term="data mining" scheme="https://miaojunca.github.io/tags/data-mining/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Concepts(1)</title>
-    <link href="http://james97.github.io/2016/04/18/Machine-Learning-Concepts/"/>
-    <id>http://james97.github.io/2016/04/18/Machine-Learning-Concepts/</id>
+    <link href="https://miaojunca.github.io/2016/04/18/Machine-Learning-Concepts/"/>
+    <id>https://miaojunca.github.io/2016/04/18/Machine-Learning-Concepts/</id>
     <published>2016-04-18T04:05:06.000Z</published>
     <updated>2016-04-18T14:59:21.000Z</updated>
     
@@ -342,19 +342,19 @@
     
     </summary>
     
-      <category term="machine learning" scheme="http://james97.github.io/categories/machine-learning/"/>
+      <category term="machine learning" scheme="https://miaojunca.github.io/categories/machine-learning/"/>
     
     
-      <category term="machine learning" scheme="http://james97.github.io/tags/machine-learning/"/>
+      <category term="machine learning" scheme="https://miaojunca.github.io/tags/machine-learning/"/>
     
-      <category term="data mining" scheme="http://james97.github.io/tags/data-mining/"/>
+      <category term="data mining" scheme="https://miaojunca.github.io/tags/data-mining/"/>
     
   </entry>
   
   <entry>
     <title>Build a light blog on Github by Hexo</title>
-    <link href="http://james97.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/"/>
-    <id>http://james97.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/</id>
+    <link href="https://miaojunca.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/"/>
+    <id>https://miaojunca.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/</id>
     <published>2016-04-15T14:55:52.000Z</published>
     <updated>2016-04-15T18:35:59.000Z</updated>
     
@@ -390,21 +390,21 @@
     
     </summary>
     
-      <category term="Programming" scheme="http://james97.github.io/categories/Programming/"/>
+      <category term="Programming" scheme="https://miaojunca.github.io/categories/Programming/"/>
     
     
-      <category term="hexo" scheme="http://james97.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://miaojunca.github.io/tags/hexo/"/>
     
-      <category term="github" scheme="http://james97.github.io/tags/github/"/>
+      <category term="github" scheme="https://miaojunca.github.io/tags/github/"/>
     
-      <category term="blog" scheme="http://james97.github.io/tags/blog/"/>
+      <category term="blog" scheme="https://miaojunca.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://james97.github.io/2016/04/13/hello-world/"/>
-    <id>http://james97.github.io/2016/04/13/hello-world/</id>
+    <link href="https://miaojunca.github.io/2016/04/13/hello-world/"/>
+    <id>https://miaojunca.github.io/2016/04/13/hello-world/</id>
     <published>2016-04-14T02:44:14.000Z</published>
     <updated>2016-04-15T16:00:40.000Z</updated>
     
