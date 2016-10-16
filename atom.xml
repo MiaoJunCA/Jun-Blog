@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Jun&#39;s Note Blog</title>
   
-  <link href="/Jun-blog/atom.xml" rel="self"/>
+  <link href="/Jun-Blog/atom.xml" rel="self"/>
   
   <link href="https://miaojunca.github.io/"/>
   <updated>2016-10-15T23:30:37.000Z</updated>
