@@ -4,9 +4,9 @@
   
   <link href="/Jun-Blog/atom.xml" rel="self"/>
   
-  <link href="https://miaojunca.github.io/"/>
-  <updated>2016-10-15T23:30:37.000Z</updated>
-  <id>https://miaojunca.github.io/</id>
+  <link href="http://miaojunca.github.io/"/>
+  <updated>2016-10-16T00:42:00.000Z</updated>
+  <id>http://miaojunca.github.io/</id>
   
   <author>
     <name>Jun (James) Miao</name>
@@ -16,9 +16,25 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>how to use setuptools for python projects</title>
+    <link href="http://miaojunca.github.io/2016/10/15/how-to-use-setuptools-for-python-projects/"/>
+    <id>http://miaojunca.github.io/2016/10/15/how-to-use-setuptools-for-python-projects/</id>
+    <published>2016-10-16T00:42:00.000Z</published>
+    <updated>2016-10-16T00:42:00.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Understanding character encoding</title>
-    <link href="https://miaojunca.github.io/2016/10/05/Understanding-character-encoding/"/>
-    <id>https://miaojunca.github.io/2016/10/05/Understanding-character-encoding/</id>
+    <link href="http://miaojunca.github.io/2016/10/05/Understanding-character-encoding/"/>
+    <id>http://miaojunca.github.io/2016/10/05/Understanding-character-encoding/</id>
     <published>2016-10-06T01:48:06.000Z</published>
     <updated>2016-10-15T23:30:37.000Z</updated>
     
@@ -88,19 +104,19 @@
     
     </summary>
     
-      <category term="programming" scheme="https://miaojunca.github.io/categories/programming/"/>
+      <category term="programming" scheme="http://miaojunca.github.io/categories/programming/"/>
     
     
-      <category term="programming" scheme="https://miaojunca.github.io/tags/programming/"/>
+      <category term="programming" scheme="http://miaojunca.github.io/tags/programming/"/>
     
-      <category term="python" scheme="https://miaojunca.github.io/tags/python/"/>
+      <category term="python" scheme="http://miaojunca.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>How to set python version in virtualenv</title>
-    <link href="https://miaojunca.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/"/>
-    <id>https://miaojunca.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/</id>
+    <link href="http://miaojunca.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/"/>
+    <id>http://miaojunca.github.io/2016/10/05/How-to-set-python-version-in-virtualenv/</id>
     <published>2016-10-06T00:11:43.000Z</published>
     <updated>2016-10-06T01:41:59.000Z</updated>
     
@@ -118,28 +134,28 @@
     
     </summary>
     
-      <category term="programming" scheme="https://miaojunca.github.io/categories/programming/"/>
+      <category term="programming" scheme="http://miaojunca.github.io/categories/programming/"/>
     
     
-      <category term="programming" scheme="https://miaojunca.github.io/tags/programming/"/>
+      <category term="programming" scheme="http://miaojunca.github.io/tags/programming/"/>
     
-      <category term="python" scheme="https://miaojunca.github.io/tags/python/"/>
+      <category term="python" scheme="http://miaojunca.github.io/tags/python/"/>
     
-      <category term="virtualenv" scheme="https://miaojunca.github.io/tags/virtualenv/"/>
+      <category term="virtualenv" scheme="http://miaojunca.github.io/tags/virtualenv/"/>
     
   </entry>
   
   <entry>
     <title>insert local image for hexo sites</title>
-    <link href="https://miaojunca.github.io/2016/05/24/insert-local-image-for-hexo-sites/"/>
-    <id>https://miaojunca.github.io/2016/05/24/insert-local-image-for-hexo-sites/</id>
+    <link href="http://miaojunca.github.io/2016/05/24/insert-local-image-for-hexo-sites/"/>
+    <id>http://miaojunca.github.io/2016/05/24/insert-local-image-for-hexo-sites/</id>
     <published>2016-05-24T13:18:04.000Z</published>
     <updated>2016-05-24T13:53:27.000Z</updated>
     
     <content type="html">&lt;p&gt;It is very common to insert images into a markdown file. Usually, we can easily make this by &amp;#x201C;![]()&amp;#x201D; and put the URL of the pictures into (). How can we deal with local pictures? &lt;/p&gt;
 &lt;p&gt;I have to say, if editors like MacDown can be associated to Hexo better, that will be as awesome as &lt;a href=&quot;https://marxi.co/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Marxico&lt;/a&gt;. The latter can automatically put your snapped figures into local ones, insert links into your md file and convert your md to a Evernote note. You don&amp;#x2019;t even know where the figures are really stored! &lt;/p&gt;
 &lt;p&gt;The good thing is we have a plugin named &lt;a href=&quot;https://github.com/CodeFalling/hexo-asset-image&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo-asset-image&lt;/a&gt;. Just enter your hexo folder, run &lt;code&gt;npm install hexo-asset-image --save&lt;/code&gt; , and then make sure you have post_asset_folder: true in your _config.yml. Beware, &lt;strong&gt;_config.yml in your hexo folder, not the one in your theme folder&lt;/strong&gt;. &lt;/p&gt;
-&lt;p&gt;After that, when you create a new post by hexo -n, a new folder with the same name as your post will be created. So the structure will be like &lt;img src=&quot;/Jun-blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png&quot; alt=&quot;this&quot;&gt;. Got this! Then just use &lt;code&gt;![logo](MacGesture2-Publish/logo.jpg)&lt;/code&gt; to insert logo.jpg to insert the figure.&lt;/p&gt;
+&lt;p&gt;After that, when you create a new post by hexo -n, a new folder with the same name as your post will be created. So the structure will be like &lt;img src=&quot;/Jun-Blog/2016/05/24/insert-local-image-for-hexo-sites/structure.png&quot; alt=&quot;this&quot;&gt;. Got this! Then just use &lt;code&gt;![logo](MacGesture2-Publish/logo.jpg)&lt;/code&gt; to insert logo.jpg to insert the figure.&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -149,18 +165,18 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://miaojunca.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://miaojunca.github.io/tags/hexo/"/>
     
-      <category term="markdown" scheme="https://miaojunca.github.io/tags/markdown/"/>
+      <category term="markdown" scheme="http://miaojunca.github.io/tags/markdown/"/>
     
-      <category term="plugin" scheme="https://miaojunca.github.io/tags/plugin/"/>
+      <category term="plugin" scheme="http://miaojunca.github.io/tags/plugin/"/>
     
   </entry>
   
   <entry>
     <title>Something about MapReduce(1)</title>
-    <link href="https://miaojunca.github.io/2016/05/24/Something-about-MapReduce-1/"/>
-    <id>https://miaojunca.github.io/2016/05/24/Something-about-MapReduce-1/</id>
+    <link href="http://miaojunca.github.io/2016/05/24/Something-about-MapReduce-1/"/>
+    <id>http://miaojunca.github.io/2016/05/24/Something-about-MapReduce-1/</id>
     <published>2016-05-24T13:17:34.000Z</published>
     <updated>2016-05-24T15:07:43.000Z</updated>
     
@@ -177,7 +193,7 @@
 &lt;ul&gt;
 &lt;li&gt;Word Count. &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;/Jun-blog/2016/05/24/Something-about-MapReduce-1/wordcount.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/Jun-Blog/2016/05/24/Something-about-MapReduce-1/wordcount.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Distributed Grep. Mapper will emit a line if it matches a supplied pattern. Reducer just copy the supplied intermediate data to the output. So what are the keys? Seems we can use doc_id+line_num&lt;/li&gt;
 &lt;li&gt;Count of URL access Frequency. Just like word count, replace words to URLs.&lt;/li&gt;
@@ -195,19 +211,19 @@
     
     </summary>
     
-      <category term="Big Data" scheme="https://miaojunca.github.io/categories/Big-Data/"/>
+      <category term="Big Data" scheme="http://miaojunca.github.io/categories/Big-Data/"/>
     
     
-      <category term="MapReduce" scheme="https://miaojunca.github.io/tags/MapReduce/"/>
+      <category term="MapReduce" scheme="http://miaojunca.github.io/tags/MapReduce/"/>
     
-      <category term="Big data" scheme="https://miaojunca.github.io/tags/Big-data/"/>
+      <category term="Big data" scheme="http://miaojunca.github.io/tags/Big-data/"/>
     
   </entry>
   
   <entry>
     <title>Solve a machine learning problem step by step</title>
-    <link href="https://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/"/>
-    <id>https://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</id>
+    <link href="http://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/"/>
+    <id>http://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</id>
     <published>2016-04-26T18:32:11.000Z</published>
     <updated>2016-04-26T18:45:30.000Z</updated>
     
@@ -268,16 +284,16 @@
     </summary>
     
     
-      <category term="machine learning" scheme="https://miaojunca.github.io/tags/machine-learning/"/>
+      <category term="machine learning" scheme="http://miaojunca.github.io/tags/machine-learning/"/>
     
-      <category term="data mining" scheme="https://miaojunca.github.io/tags/data-mining/"/>
+      <category term="data mining" scheme="http://miaojunca.github.io/tags/data-mining/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Concepts (2)</title>
-    <link href="https://miaojunca.github.io/2016/04/20/Machine-Learning-Concepts-2/"/>
-    <id>https://miaojunca.github.io/2016/04/20/Machine-Learning-Concepts-2/</id>
+    <link href="http://miaojunca.github.io/2016/04/20/Machine-Learning-Concepts-2/"/>
+    <id>http://miaojunca.github.io/2016/04/20/Machine-Learning-Concepts-2/</id>
     <published>2016-04-20T13:51:09.000Z</published>
     <updated>2016-04-20T17:27:25.000Z</updated>
     
@@ -298,19 +314,19 @@
     
     </summary>
     
-      <category term="machine learning" scheme="https://miaojunca.github.io/categories/machine-learning/"/>
+      <category term="machine learning" scheme="http://miaojunca.github.io/categories/machine-learning/"/>
     
     
-      <category term="machine learning" scheme="https://miaojunca.github.io/tags/machine-learning/"/>
+      <category term="machine learning" scheme="http://miaojunca.github.io/tags/machine-learning/"/>
     
-      <category term="data mining" scheme="https://miaojunca.github.io/tags/data-mining/"/>
+      <category term="data mining" scheme="http://miaojunca.github.io/tags/data-mining/"/>
     
   </entry>
   
   <entry>
     <title>Machine Learning Concepts(1)</title>
-    <link href="https://miaojunca.github.io/2016/04/18/Machine-Learning-Concepts/"/>
-    <id>https://miaojunca.github.io/2016/04/18/Machine-Learning-Concepts/</id>
+    <link href="http://miaojunca.github.io/2016/04/18/Machine-Learning-Concepts/"/>
+    <id>http://miaojunca.github.io/2016/04/18/Machine-Learning-Concepts/</id>
     <published>2016-04-18T04:05:06.000Z</published>
     <updated>2016-04-18T14:59:21.000Z</updated>
     
@@ -342,21 +358,21 @@
     
     </summary>
     
-      <category term="machine learning" scheme="https://miaojunca.github.io/categories/machine-learning/"/>
+      <category term="machine learning" scheme="http://miaojunca.github.io/categories/machine-learning/"/>
     
     
-      <category term="machine learning" scheme="https://miaojunca.github.io/tags/machine-learning/"/>
+      <category term="machine learning" scheme="http://miaojunca.github.io/tags/machine-learning/"/>
     
-      <category term="data mining" scheme="https://miaojunca.github.io/tags/data-mining/"/>
+      <category term="data mining" scheme="http://miaojunca.github.io/tags/data-mining/"/>
     
   </entry>
   
   <entry>
     <title>Build a light blog on Github by Hexo</title>
-    <link href="https://miaojunca.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/"/>
-    <id>https://miaojunca.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/</id>
+    <link href="http://miaojunca.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/"/>
+    <id>http://miaojunca.github.io/2016/04/15/Build-a-light-blog-on-Github-by-Hexo/</id>
     <published>2016-04-15T14:55:52.000Z</published>
-    <updated>2016-04-15T18:35:59.000Z</updated>
+    <updated>2016-10-16T00:47:05.000Z</updated>
     
     <content type="html">&lt;p&gt;In order to have my own blog, I have tried a lot of ways. A popular one is buy a domain name and a space,  download wordpress, use a template with plenty of plugins. The problem is, I have to select themes and plugins to satisfied my needs, e.g., code highlight or Markdown support. Is that too hard? Not really. But that will definitely cost much time, especially on dealing with css problems and plugin conflicts. Since usually I want to write some about what I learned in my area, it is better to start the blogging as easy as possible.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;Github gives me the chance. It is the first time I know it can support blogs in a handy way. There are lots of posts talking about how to build it, and the guidance from Github is good enough. Here I want to record how I use &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hexo&lt;/a&gt; to get this done and what problems I have met.&lt;/p&gt;
 &lt;p&gt;Hexo is a jekyll like tool for generating static website, which is quite suitable for Github pages. I have tried jekyll. It is good, but still not so convenient as hexo. I have to update everything as using a normal git repository with commit/push operations. On the contrary, hexo can get these done with one single command.&lt;/p&gt;
@@ -377,7 +393,7 @@
 &lt;li&gt;&lt;code&gt;hexo deploy&lt;/code&gt; to upload your post to your github blog.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;There are several things we need to concern. The most important thing is the _config.yml. This file controls all the settings of your blog. It is easy to setup title/description or other site attributes. For the URL part, take care. Initially, I think I don&amp;#x2019;t have a personal web space and domain name, so I needn&amp;#x2019;t change this. The result is, no matter how I deploy it, my blog on github does not execute the css style file. Also, every link on the site will be directed to &lt;code&gt;404&lt;/code&gt; page. So even you just use your github url, define it in the _config.yml file as follows please&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;url: http://james97.github.io/&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;root: /Jun-blog/ #project name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;url: http://james97.github.io/   #Not HTTPS!!&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;root: /Jun-blog/ #project name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Another point is about the deploy settings. Here is mine&lt;/p&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    repository: git@github.com:james97/Jun-blog.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    branch: gh-pages&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;Some old posts set type to &lt;code&gt;github&lt;/code&gt;. It is not correct now. The branch issue is also important. The real blog shown to readers is always in your &lt;code&gt;gh-pages&lt;/code&gt; branch. When you create a repository for the blog, you will have a &lt;code&gt;master&lt;/code&gt; branch at first. Then go to settings and click &lt;code&gt;Launch automatic page generator&lt;/code&gt;, you will have a &lt;code&gt;gh-pages&lt;/code&gt; branch automatically. Every time you want to update your blog, modify this branch. The &lt;code&gt;master&lt;/code&gt; branch is used for your real projects, not the blogs.&lt;/p&gt;
@@ -390,21 +406,21 @@
     
     </summary>
     
-      <category term="Programming" scheme="https://miaojunca.github.io/categories/Programming/"/>
+      <category term="Programming" scheme="http://miaojunca.github.io/categories/Programming/"/>
     
     
-      <category term="hexo" scheme="https://miaojunca.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://miaojunca.github.io/tags/hexo/"/>
     
-      <category term="github" scheme="https://miaojunca.github.io/tags/github/"/>
+      <category term="github" scheme="http://miaojunca.github.io/tags/github/"/>
     
-      <category term="blog" scheme="https://miaojunca.github.io/tags/blog/"/>
+      <category term="blog" scheme="http://miaojunca.github.io/tags/blog/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://miaojunca.github.io/2016/04/13/hello-world/"/>
-    <id>https://miaojunca.github.io/2016/04/13/hello-world/</id>
+    <link href="http://miaojunca.github.io/2016/04/13/hello-world/"/>
+    <id>http://miaojunca.github.io/2016/04/13/hello-world/</id>
     <published>2016-04-14T02:44:14.000Z</published>
     <updated>2016-04-15T16:00:40.000Z</updated>
     
