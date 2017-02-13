@@ -109,13 +109,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>Menu</li>
-                        <li>Tags</li>
+                        <li>菜单</li>
+                        <li>标签</li>
                         
-                        <li>Friends</li>
+                        <li>友情链接</li>
                         
                         
-                        <li>About Me</li>
+                        <li>关于我</li>
                         
                     </ul>
                 </div>
@@ -284,7 +284,7 @@
 <li>Determine the key/value pairs for each piece. Of course, have to know the input source first and consider how to convert it into key/value pairs as well.</li>
 <li>The intermediate outputs from Mapper will be the inputs of the Reducer. Collect the values for the same key, and think about how to use them to get the final results.</li>
 </ol>
-<p>Looks simple. Right? There are some other mechanisms to ensure the MapReduce model to be fault-tolerant, load-balance&#x2026; But so far these are not my concerns. There are some examples in the google paper. </p>
+<p>Looks simple. Right? There are some other mechanisms to ensure the MapReduce model to be fault-tolerant, load-balance… But so far these are not my concerns. There are some examples in the google paper. </p>
 <ul>
 <li>Word Count. </li>
 </ul>
@@ -295,7 +295,7 @@
 <li>Reverse Web-Link Graph. Mapper outputs <target, source="">. Targets are the links in the Source page. Reduces will concatenate the list of all source URL associated with a given target URL and emits <targes, list(source)="">. </targes,></target,></li>
 <li>Term-Vector per Host. A term vector summarizes the<br>most important words that occur in a document or a set<br>of documents as a list of <word, frequency=""> pairs. The<br>map function emits a <hostname, term=""> vector<br>pair for each input document (where the hostname is<br>extracted from the URL of the document). The reduce<br>function is passed all per-document term vectors<br>for a given host. It adds these term vectors together,<br>throwing away infrequent terms, and then emits a final<br><hostname, term="" vector=""> pair.</hostname,></hostname,></word,></li>
 <li>Inverted Index. Each documents will be put into Mapper. The Mapper will emit <term, docid=""> pairs, and the Reduces will concatenate all the docids and make a list. The outputs will be <term, list(docids)="">. If we make docid and term position together, we can also store this information.</term,></term,></li>
-<li>Distributed sort. This is a little bit tricky to determine the key/value. We can&#x2019;t just implement it like a merge sort while merge sort only has sub lists. So the strategy is Hash each line of the text to a particular reducer to make sure that $K_1$ &lt; $K_2$ =&gt; hash($K_1$) =&gt; hash($K_2$). If the keys are the prefixes of each line, then make sure the intermediate values are sent to reducer based on their prefix orders.</li>
+<li>Distributed sort. This is a little bit tricky to determine the key/value. We can’t just implement it like a merge sort while merge sort only has sub lists. So the strategy is Hash each line of the text to a particular reducer to make sure that $K_1$ &lt; $K_2$ =&gt; hash($K_1$) =&gt; hash($K_2$). If the keys are the prefixes of each line, then make sure the intermediate values are sent to reducer based on their prefix orders.</li>
 </ul>
 <p>More examples can be found <a href="https://courses.cs.washington.edu/courses/cse490h/08au/lectures/algorithms.pdf" target="_blank" rel="external">Here</a>.</p>
 
@@ -306,18 +306,18 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/Jun-Blog/2016/05/24/Something-about-MapReduce-1/">Something about MapReduce(1)</a></p>
-        <p><span>Author:</span><a href="/" title="Back to Homepage">Jun (James) Miao</a></p>
-        <p><span>Created:</span>2016-05-24, 09:17:34</p>
-        <p><span>Updated:</span>2016-05-24, 11:07:43</p>
+        <p><span>本文标题:</span><a href="/Jun-Blog/2016/05/24/Something-about-MapReduce-1/">Something about MapReduce(1)</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Jun (James) Miao</a></p>
+        <p><span>发布时间:</span>2016-05-24, 09:17:34</p>
+        <p><span>最后更新:</span>2016-05-24, 11:07:43</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/Jun-Blog/2016/05/24/Something-about-MapReduce-1/" title="Something about MapReduce(1)">http://miaojunca.github.io/Jun-Blog/2016/05/24/Something-about-MapReduce-1/</a>
-            <span class="copy-path" data-clipboard-text="From http://miaojunca.github.io/Jun-Blog/2016/05/24/Something-about-MapReduce-1/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/Jun-Blog/2016/05/24/Something-about-MapReduce-1/" title="Something about MapReduce(1)">http://miaojunca.github.io/Jun-Blog/2016/05/24/Something-about-MapReduce-1/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://miaojunca.github.io/Jun-Blog/2016/05/24/Something-about-MapReduce-1/　　作者: Jun (James) Miao" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
-            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
         </p>
     </div>
 
@@ -344,7 +344,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-    <strong class="toc-title">Contents</strong>
+    <strong class="toc-title">文章目录</strong>
     
 </div>
 <style>
@@ -356,10 +356,10 @@
     }
 </style>
 
-<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 <script>
-    var valueHide = "Hide";
-    var valueShow = "Show";
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
 
     if ($(".left-col").is(":hidden")) {
         $("#tocButton").attr("value", valueShow);
@@ -422,15 +422,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/Jun-Blog/2016/05/24/insert-local-image-for-hexo-sites/" title="Pre: insert local image for hexo sites">
+            <a href="/Jun-Blog/2016/05/24/insert-local-image-for-hexo-sites/" title="上一篇: insert local image for hexo sites">
                 <i class="fa fa-angle-left"></i>
             </a>
         
 
-        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" title="Next: Solve a machine learning problem step by step">
+            <a href="/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" title="下一篇: Solve a machine learning problem step by step">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -452,14 +452,14 @@
                 &copy; 2017 Jun (James) Miao
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo">Yelee</a> by MOxFIVE
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题">Yelee</a> by MOxFIVE
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >Site Visitors: 
+                        <span id="site-visit" >本站到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -469,7 +469,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">Page Hits: 
+                        <span id="page-visit">本页阅读量: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
@@ -525,9 +525,9 @@ MathJax.Hub.Queue(function() {
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" title="Comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
