@@ -5,7 +5,7 @@
   <link href="/Jun-Blog/atom.xml" rel="self"/>
   
   <link href="http://miaojunca.github.io/"/>
-  <updated>2016-10-16T18:49:46.000Z</updated>
+  <updated>2017-02-13T00:55:12.000Z</updated>
   <id>http://miaojunca.github.io/</id>
   
   <author>
@@ -14,6 +14,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>how to use lucene (1)</title>
+    <link href="http://miaojunca.github.io/2017/02/12/how-to-use-lucene-1-1/"/>
+    <id>http://miaojunca.github.io/2017/02/12/how-to-use-lucene-1-1/</id>
+    <published>2017-02-13T00:49:44.000Z</published>
+    <updated>2017-02-13T00:55:12.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Lucene is the core of ElasticSearch and Solr. If I want to customize a search engine and make improvements via new components, it is necessary to access Lucene directly. A reference can be found &lt;a href=&quot;https://www.javacodegeeks.com/2015/09/building-a-search-index-with-lucene.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Here&lt;/a&gt;. Some examples are also from this blog. The author owns the credit.&lt;/p&gt;
+&lt;p&gt;#####Build Index&lt;br&gt;Everything starts from building an index. The structure of Lucene processes haven&amp;#x2019;t been changed in the recent versions.&lt;/p&gt;
+&lt;p&gt;Step 1. Set an &lt;strong&gt;IndexWriter&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Directory index = FSDirectory.open(Paths.get(indexPath));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IndexWriterConfig config = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IndexWriterConfig().setSimilarity(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.similarity)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .setOpenMode(IndexWriterConfig.OpenMode.CREATE_OR_APPEND);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IndexWriter indexWriter = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IndexWriter(index, config);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;A thing confused me is that we need to set a similarity for IndexWriter!! The only reason I guess is Similarity contains the way of length normalization. By default, it is set to BM25Similarity. &lt;/p&gt;
+&lt;p&gt;Step 2. Convert raw texts into Lucene Documents.&lt;br&gt;In Lucene, indices consists lots of documents, and each document consists a set of fields. So when searching in Lucene, search fields always need to be specified as a string array.&lt;/p&gt;
+&lt;p&gt;Quoted from Lucene Javadoc:&lt;br&gt;Expert: directly create a field for a document. Most users should use one of the sugar subclasses:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TextField: Reader or String indexed for full-text search&lt;/li&gt;
+&lt;li&gt;StringField: String indexed verbatim as a single token&lt;/li&gt;
+&lt;li&gt;IntPoint: int indexed for exact/range queries.&lt;/li&gt;
+&lt;li&gt;LongPoint: long indexed for exact/range queries.&lt;/li&gt;
+&lt;li&gt;FloatPoint: float indexed for exact/range queries.&lt;/li&gt;
+&lt;li&gt;DoublePoint: double indexed for exact/range queries.&lt;/li&gt;
+&lt;li&gt;SortedDocValuesField: byte[] indexed column-wise for sorting/faceting&lt;/li&gt;
+&lt;li&gt;SortedSetDocValuesField: SortedSet&lt;byte[]&gt; indexed column-wise for sorting/faceting&lt;/byte[]&gt;&lt;/li&gt;
+&lt;li&gt;NumericDocValuesField: long indexed column-wise for sorting/faceting&lt;/li&gt;
+&lt;li&gt;SortedNumericDocValuesField: SortedSet&lt;long&gt; indexed column-wise for sorting/faceting&lt;/long&gt;&lt;/li&gt;
+&lt;li&gt;StoredField: Stored-only value for retrieving in summary results &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, we want texts to be stored/indexed in different formats. For example, real contents should be analyzed into tokens and used for searches. Differently, we don&amp;#x2019;t want to change Id fields a little bit because they are unique. For numbers, we expect to have a range search over that. So seriously think about the structure of a document before index it. A lesson from me is that I store the content as a StringField. In this case, &amp;#x201C;cat&amp;#x201D; will not match documents which have &amp;#x201C;cat and dog&amp;#x201D; because &amp;#x201C;cat and dog&amp;#x201D; is considered as a single token. It is smart to check the source code of each Field class before use it.&lt;/p&gt;
+&lt;p&gt;Want to customize a field? No problem. &lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;FieldType storedFieldType = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; FieldType();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      storedFieldType.setStoreTermVectors(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      storedFieldType.setStored(&lt;span class=&quot;keyword&quot;&gt;true&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      storedFieldType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	doc.add(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Field(fieldName, (String) sth, storedFieldType));&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;I use the above field to store a kind of text with TermVectors so that I can know what terms are in this field in the future. By default, this option is &lt;strong&gt;FALSE&lt;/strong&gt;. Field.Index.ANALYZED means the content will be analyzed and can be searched. Field.Store.Yes means the field can be shown for the final search results, but it cannot be searched&amp;#x2026;&lt;/p&gt;
+&lt;p&gt;Step 3. Set an analyzer for the indexwriter. An analyzer is for proceed a text into tokens(Or approximately, terms in the index). &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To make sure a search is correct, we have to use the same analyzer for indexing and searching, and Lucene itself will not ensure that!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By default, Lucene use StandardAnalyzer. It will do stemming/stopwords removal.&lt;/p&gt;
+&lt;p&gt;Step 4. Wanna boost the weight of a Field? This can be done as follows. But it looks like the boost is on the document level which means only this document will benefit from the boost.&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;doc.add(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TextField(&lt;span class=&quot;string&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;, author, Field.Store.YES));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      Field titleField = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TextField(&lt;span class=&quot;string&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;, title, Field.Store.YES);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      doc.add(titleField);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      titleField.setBoost(titleBoost);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      indexWriter.addDocument(doc);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;To apply a query-time boost is also available. Before building the real query, one can boost the weight of a query term in a particular field as:&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;TermQuery query = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TermQuery(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Term(&lt;span class=&quot;string&quot;&gt;&amp;quot;title&amp;quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;quot;fox&amp;quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         TermQuery query2 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TermQuery(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Term(&lt;span class=&quot;string&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;quot;smith&amp;quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         TermQuery query3 = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; TermQuery(&lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Term(&lt;span class=&quot;string&quot;&gt;&amp;quot;author&amp;quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&amp;quot;sam&amp;quot;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         query2.setBoost((&lt;span class=&quot;keyword&quot;&gt;float&lt;/span&gt;) &lt;span class=&quot;number&quot;&gt;2.0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         BooleanQuery booleanQuery = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; BooleanQuery();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         booleanQuery.add(query, Occur.MUST);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         booleanQuery.add(query2, Occur.SHOULD);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;         booleanQuery.add(query3, Occur.SHOULD);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Now smith appearing in &amp;#x201C;author&amp;#x201D; field will get a higher score than normal.&lt;/p&gt;
+&lt;p&gt;Step 5. Add new documents to IndexWriter and write as normal file write operations. &lt;/p&gt;
+&lt;p&gt;Extra: If one wants to add a new document after an index has been built, that is also easy. Just create an indexreader as above, but using IndexReaderConfig to set it in &amp;#x201C;append&amp;#x201D; mode.&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;IndexWriterConfig conf = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IndexWriterConfig(analyzer);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;conf.setOpenMode(IndexWriterConfig.OpenMode.APPEND);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Lucene is the core of ElasticSearch and Solr. If I want to customize a search engine and make improvements via new components, it is necessary to access Lucene directly. A reference can be found &lt;a href=&quot;https://www.javacodegeeks.com/2015/09/building-a-search-index-with-lucene.html&quot;&gt;Here&lt;/a&gt;. Some examples are also from this blog. The author owns the credit.&lt;/p&gt;
+&lt;p&gt;#####Build Index&lt;br&gt;Everything starts from building an index. The structure of Lucene processes haven&amp;#x2019;t been changed in the recent versions.&lt;/p&gt;
+&lt;p&gt;Step 1. Set an &lt;strong&gt;IndexWriter&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Directory index = FSDirectory.open(Paths.get(indexPath));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IndexWriterConfig config = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IndexWriterConfig().setSimilarity(&lt;span class=&quot;keyword&quot;&gt;this&lt;/span&gt;.similarity)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                .setOpenMode(IndexWriterConfig.OpenMode.CREATE_OR_APPEND);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;IndexWriter indexWriter = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; IndexWriter(index, config);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://miaojunca.github.io/categories/Programming/"/>
+    
+    
+      <category term="Information Retrieval" scheme="http://miaojunca.github.io/tags/Information-Retrieval/"/>
+    
+      <category term="Lucene" scheme="http://miaojunca.github.io/tags/Lucene/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>how to use lucene (1)</title>
+    <link href="http://miaojunca.github.io/2017/02/12/how-to-use-lucene-1/"/>
+    <id>http://miaojunca.github.io/2017/02/12/how-to-use-lucene-1/</id>
+    <published>2017-02-13T00:49:03.000Z</published>
+    <updated>2017-02-13T00:49:03.000Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>how to use setuptools for python projects</title>

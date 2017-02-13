@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Solve a machine learning problem step by step | Jun&#39;s Note Blog</title>
+  <title>how to use lucene (1) | Jun&#39;s Note Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Main frame for data science problems
-My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a nic">
+  <meta name="description" content="Lucene is the core of ElasticSearch and Solr. If I want to customize a search engine and make improvements via new components, it is necessary to access Lucene directly. A reference can be found Here.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Solve a machine learning problem step by step">
-<meta property="og:url" content="http://miaojunca.github.io/2016/04/26/Solve-a-machine-learning-problem-step-by-step/index.html">
+<meta property="og:title" content="how to use lucene (1)">
+<meta property="og:url" content="http://miaojunca.github.io/2017/02/12/how-to-use-lucene-1-1/index.html">
 <meta property="og:site_name" content="Jun's Note Blog">
-<meta property="og:description" content="Main frame for data science problems
-My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a nic">
-<meta property="og:updated_time" content="2016-04-26T18:45:30.000Z">
+<meta property="og:description" content="Lucene is the core of ElasticSearch and Solr. If I want to customize a search engine and make improvements via new components, it is necessary to access Lucene directly. A reference can be found Here.">
+<meta property="og:updated_time" content="2017-02-13T00:55:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Solve a machine learning problem step by step">
-<meta name="twitter:description" content="Main frame for data science problems
-My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a nic">
+<meta name="twitter:title" content="how to use lucene (1)">
+<meta name="twitter:description" content="Lucene is the core of ElasticSearch and Solr. If I want to customize a search engine and make improvements via new components, it is necessary to access Lucene directly. A reference can be found Here.">
   
     <link rel="alternative" href="/atom.xml" title="Jun&#39;s Note Blog" type="application/atom+xml">
   
@@ -233,11 +230,11 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Solve-a-machine-learning-problem-step-by-step" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-how-to-use-lucene-1-1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" class="article-date">
-      <time datetime="2016-04-26T18:32:11.000Z" itemprop="datePublished">2016-04-26</time>
+      <a href="/Jun-Blog/2017/02/12/how-to-use-lucene-1-1/" class="article-date">
+      <time datetime="2017-02-13T00:49:44.000Z" itemprop="datePublished">2017-02-12</time>
 </a>
     </div>
   
@@ -250,7 +247,7 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
         
   
     <h1 class="article-title" itemprop="name">
-      Solve a machine learning problem step by step
+      how to use lucene (1)
     </h1>
   
 
@@ -258,10 +255,14 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/Jun-Blog/categories/Programming/">Programming</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-Blog/tags/data-mining/">data mining</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-Blog/tags/machine-learning/">machine learning</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-Blog/tags/Information-Retrieval/">Information Retrieval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Jun-Blog/tags/Lucene/">Lucene</a></li></ul>
     </div>
 
 
@@ -272,53 +273,44 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><strong>Main frame for data science problems</strong></p>
-<p>My main problem is lack of experiences in dealing such problems, e.g. Cases on Kaggle. To be honest, with the help of open source packages, it is easy to get a nice result. Fetching the python code from a top-k author and modify it is an easy way. However, in order to find a data scientist job, it is better to learn how to solve these problems from the very beginning.<br><a id="more"></a></p>
-<p>Basically, we can divide the process into several steps: </p>
-<ol>
-<li>Collect data. On Kaggle, data are ready in .csv files, so it is easy to read them through Pandas. For other scenarios, we need to collect data by ourselves and store them. The techniques or tools we can use are Nutch, Scrapy, Mysql, Solr/Lucene. </li>
-<li><p>Load Data. Pandas has a series of readers to read data in different formats, which is very nice. Check the list below for what you need: </p>
+        <p>Lucene is the core of ElasticSearch and Solr. If I want to customize a search engine and make improvements via new components, it is necessary to access Lucene directly. A reference can be found <a href="https://www.javacodegeeks.com/2015/09/building-a-search-index-with-lucene.html" target="_blank" rel="external">Here</a>. Some examples are also from this blog. The author owns the credit.</p>
+<p>#####Build Index<br>Everything starts from building an index. The structure of Lucene processes haven&#x2019;t been changed in the recent versions.</p>
+<p>Step 1. Set an <strong>IndexWriter</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Directory index = FSDirectory.open(Paths.get(indexPath));</span><br><span class="line">IndexWriterConfig config = <span class="keyword">new</span> IndexWriterConfig().setSimilarity(<span class="keyword">this</span>.similarity)</span><br><span class="line">                .setOpenMode(IndexWriterConfig.OpenMode.CREATE_OR_APPEND);</span><br><span class="line">IndexWriter indexWriter = <span class="keyword">new</span> IndexWriter(index, config);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>A thing confused me is that we need to set a similarity for IndexWriter!! The only reason I guess is Similarity contains the way of length normalization. By default, it is set to BM25Similarity. </p>
+<p>Step 2. Convert raw texts into Lucene Documents.<br>In Lucene, indices consists lots of documents, and each document consists a set of fields. So when searching in Lucene, search fields always need to be specified as a string array.</p>
+<p>Quoted from Lucene Javadoc:<br>Expert: directly create a field for a document. Most users should use one of the sugar subclasses:</p>
 <ul>
-<li>read_csv </li>
-<li>read_excel </li>
-<li>read_hdf </li>
-<li>read_sql </li>
-<li>read_json </li>
-<li>read_msgpack (experimental) </li>
-<li>read_html </li>
-<li>read_gbq (experimental) </li>
-<li>read_stata - read_sas </li>
-<li>read_clipboard </li>
-<li>read_pickle </li>
+<li>TextField: Reader or String indexed for full-text search</li>
+<li>StringField: String indexed verbatim as a single token</li>
+<li>IntPoint: int indexed for exact/range queries.</li>
+<li>LongPoint: long indexed for exact/range queries.</li>
+<li>FloatPoint: float indexed for exact/range queries.</li>
+<li>DoublePoint: double indexed for exact/range queries.</li>
+<li>SortedDocValuesField: byte[] indexed column-wise for sorting/faceting</li>
+<li>SortedSetDocValuesField: SortedSet<byte[]> indexed column-wise for sorting/faceting</byte[]></li>
+<li>NumericDocValuesField: long indexed column-wise for sorting/faceting</li>
+<li>SortedNumericDocValuesField: SortedSet<long> indexed column-wise for sorting/faceting</long></li>
+<li>StoredField: Stored-only value for retrieving in summary results </li>
 </ul>
-</li>
-<li><p>Data conversion. Usually, we use float vectors to represent each item and for the learning process, but the world is not so nice to provide such data only. So we may have free texts and categories. Luckily, we have Pandas and Sklearn to deal with them. </p>
-<ul>
-<li><p>Texts. Vectorizer. For exmaple, a commonly used Vectorizer from sklearn package is TfidfVectorizer: </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">new_docs = [<span class="string">&apos;He watches basketball and baseball&apos;</span>, <span class="string">&apos;Julie likes to play basketball&apos;</span>, <span class="string">&apos;Jane loves to play baseball&apos;</span>] </span><br><span class="line">new_term_freq_matrix = tfidf_vectorizer.transform(new_docs) </span><br><span class="line"><span class="keyword">print</span> tfidf_vectorizer.vocabulary_ </span><br><span class="line"><span class="keyword">print</span> new_term_freq_matrix.todense()</span><br><span class="line"></span><br><span class="line"><span class="comment">#Terms are transformed to features, </span></span><br><span class="line">the value number <span class="keyword">is</span> the feature index of</span><br><span class="line">this term {<span class="string">u&apos;me&apos;</span>: <span class="number">8</span>, <span class="string">u&apos;basketball&apos;</span>: <span class="number">1</span>, <span class="string">u&apos;julie&apos;</span>: <span class="number">4</span>, <span class="string">u&apos;baseball&apos;</span>: <span class="number">0</span>, </span><br><span class="line"><span class="string">u&apos;likes&apos;</span>: <span class="number">5</span>, <span class="string">u&apos;loves&apos;</span>: <span class="number">7</span>, <span class="string">u&apos;jane&apos;</span>: <span class="number">3</span>, <span class="string">u&apos;linda&apos;</span>: <span class="number">6</span>, <span class="string">u&apos;more&apos;</span>: <span class="number">9</span>, </span><br><span class="line"><span class="string">u&apos;than&apos;</span>: <span class="number">10</span>, <span class="string">u&apos;he&apos;</span>: <span class="number">2</span>} </span><br><span class="line"></span><br><span class="line"><span class="comment">#tfidf vector for each document </span></span><br><span class="line">[[ <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.57735027</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.</span> <span class="number">0.68091856</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.51785612</span> <span class="number">0.51785612</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ] [ <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.62276601</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.4736296</span> <span class="number">0.</span> <span class="number">0.</span> <span class="number">0.</span> ]]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>To convert categories into integers, we can use Pandas with a map function: </p>
-</li>
-</ul>
-</li>
-</ol>
-<pre><code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Data are from the Titanic competition on Kaggle.com</span></span><br><span class="line"></span><br><span class="line">df[<span class="string">&apos;Gender&apos;</span>] = <span class="number">4</span> <span class="comment">#Genders are converted to integers by the map function with a dictionary </span></span><br><span class="line">df[<span class="string">&apos;Gender&apos;</span>] = df[<span class="string">&apos;Sex&apos;</span>].map( {<span class="string">&apos;female&apos;</span>: <span class="number">0</span>, <span class="string">&apos;male&apos;</span>: <span class="number">1</span>} ).astype(int)</span><br></pre></td></tr></table></figure>
-</code></pre><ol>
-<li><p>Data munging and data clean. </p>
-<ul>
-<li>If we want to remove a feature, just use Pandas&#x2019;s drop() function. Droping items with NA features? Easy <code>pd.dropna()</code> </li>
-<li>Simply filling NA features. <code>pd.fillna()</code>. Of course, there are lots of parameters we can use for filling. </li>
-<li>Complex filling. Sometimes, we want to fill the missing values more reasonably. For example, use the combination of other different features to determine the lost feature values. </li>
-<li>Feature creation. If we think we can make new features based on the current ones, it sometimes makes sense. For example, in the Titanic competition, we have the numbers of siblings and children. We can combine them to be a new features &#x201C;familySize&#x201D;. If we have the length and width of a rectangle, we can create a feature named &#x201C;Area&#x201D;. Actually, according to the <a href="http://www.jmlr.org/papers/volume3/guyon03a/guyon03a.pdf" target="_blank" rel="external">paper</a> about how to select features, features which have high variance with each other can also be complements. So don&#x2019;t worry about the information overlap among features. </li>
-<li>Normalization. It is necessary to normalize features into the same scale like 0 to 1. No matter we plan to use linear models or not, this can help get a more reasonable result. </li>
-<li>Dimension deduction. PCA or LDA can reduce less important features and improve the learning speed. However, they have their own limit for particular scenarios. </li>
-</ul>
-</li>
-<li><p>Training. Select appropriate models for training. If you don&#x2019;t know the best choice, try linear models or GBDT/RandomForest. Usually, they are not bad. </p>
-</li>
-<li>Testing. No matter cross-validation or others. Don&#x2019;t use the same data for both training and testing. </li>
-<li>Use it. In Kaggle cases, use your trained model on the test data and submit it.</li>
-</ol>
+<p>Of course, we want texts to be stored/indexed in different formats. For example, real contents should be analyzed into tokens and used for searches. Differently, we don&#x2019;t want to change Id fields a little bit because they are unique. For numbers, we expect to have a range search over that. So seriously think about the structure of a document before index it. A lesson from me is that I store the content as a StringField. In this case, &#x201C;cat&#x201D; will not match documents which have &#x201C;cat and dog&#x201D; because &#x201C;cat and dog&#x201D; is considered as a single token. It is smart to check the source code of each Field class before use it.</p>
+<p>Want to customize a field? No problem. </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FieldType storedFieldType = <span class="keyword">new</span> FieldType();</span><br><span class="line">      storedFieldType.setStoreTermVectors(<span class="keyword">true</span>);</span><br><span class="line">      storedFieldType.setStored(<span class="keyword">true</span>);</span><br><span class="line">      storedFieldType.setIndexOptions(IndexOptions.DOCS_AND_FREQS_AND_POSITIONS);</span><br><span class="line">  	doc.add(<span class="keyword">new</span> Field(fieldName, (String) sth, storedFieldType));</span><br></pre></td></tr></table></figure>
+<p>I use the above field to store a kind of text with TermVectors so that I can know what terms are in this field in the future. By default, this option is <strong>FALSE</strong>. Field.Index.ANALYZED means the content will be analyzed and can be searched. Field.Store.Yes means the field can be shown for the final search results, but it cannot be searched&#x2026;</p>
+<p>Step 3. Set an analyzer for the indexwriter. An analyzer is for proceed a text into tokens(Or approximately, terms in the index). </p>
+<blockquote>
+<p>To make sure a search is correct, we have to use the same analyzer for indexing and searching, and Lucene itself will not ensure that!</p>
+</blockquote>
+<p>By default, Lucene use StandardAnalyzer. It will do stemming/stopwords removal.</p>
+<p>Step 4. Wanna boost the weight of a Field? This can be done as follows. But it looks like the boost is on the document level which means only this document will benefit from the boost.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">doc.add(<span class="keyword">new</span> TextField(<span class="string">&quot;author&quot;</span>, author, Field.Store.YES));</span><br><span class="line"> </span><br><span class="line">      Field titleField = <span class="keyword">new</span> TextField(<span class="string">&quot;title&quot;</span>, title, Field.Store.YES);</span><br><span class="line">      doc.add(titleField);</span><br><span class="line">      titleField.setBoost(titleBoost);</span><br><span class="line"> </span><br><span class="line">      indexWriter.addDocument(doc);</span><br></pre></td></tr></table></figure>
+<p>To apply a query-time boost is also available. Before building the real query, one can boost the weight of a query term in a particular field as:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">TermQuery query = <span class="keyword">new</span> TermQuery(<span class="keyword">new</span> Term(<span class="string">&quot;title&quot;</span>, <span class="string">&quot;fox&quot;</span>));</span><br><span class="line">         TermQuery query2 = <span class="keyword">new</span> TermQuery(<span class="keyword">new</span> Term(<span class="string">&quot;author&quot;</span>, <span class="string">&quot;smith&quot;</span>));</span><br><span class="line">         TermQuery query3 = <span class="keyword">new</span> TermQuery(<span class="keyword">new</span> Term(<span class="string">&quot;author&quot;</span>, <span class="string">&quot;sam&quot;</span>));</span><br><span class="line">         query2.setBoost((<span class="keyword">float</span>) <span class="number">2.0</span>);</span><br><span class="line"> </span><br><span class="line">         BooleanQuery booleanQuery = <span class="keyword">new</span> BooleanQuery();</span><br><span class="line">         booleanQuery.add(query, Occur.MUST);</span><br><span class="line">         booleanQuery.add(query2, Occur.SHOULD);</span><br><span class="line">         booleanQuery.add(query3, Occur.SHOULD);</span><br></pre></td></tr></table></figure>
+<p>Now smith appearing in &#x201C;author&#x201D; field will get a higher score than normal.</p>
+<p>Step 5. Add new documents to IndexWriter and write as normal file write operations. </p>
+<p>Extra: If one wants to add a new document after an index has been built, that is also easy. Just create an indexreader as above, but using IndexReaderConfig to set it in &#x201C;append&#x201D; mode.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IndexWriterConfig conf = <span class="keyword">new</span> IndexWriterConfig(analyzer);</span><br><span class="line">conf.setOpenMode(IndexWriterConfig.OpenMode.APPEND);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -327,13 +319,13 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/">Solve a machine learning problem step by step</a></p>
+        <p><span>Title:</span><a href="/Jun-Blog/2017/02/12/how-to-use-lucene-1-1/">how to use lucene (1)</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">Jun (James) Miao</a></p>
-        <p><span>Created:</span>2016-04-26, 14:32:11</p>
-        <p><span>Updated:</span>2016-04-26, 14:45:30</p>
+        <p><span>Created:</span>2017-02-12, 19:49:44</p>
+        <p><span>Updated:</span>2017-02-12, 19:55:12</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/" title="Solve a machine learning problem step by step">http://miaojunca.github.io/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/</a>
-            <span class="copy-path" data-clipboard-text="From http://miaojunca.github.io/Jun-Blog/2016/04/26/Solve-a-machine-learning-problem-step-by-step/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/Jun-Blog/2017/02/12/how-to-use-lucene-1-1/" title="how to use lucene (1)">http://miaojunca.github.io/Jun-Blog/2017/02/12/how-to-use-lucene-1-1/</a>
+            <span class="copy-path" data-clipboard-text="From http://miaojunca.github.io/Jun-Blog/2017/02/12/how-to-use-lucene-1-1/　　By Jun (James) Miao" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -346,16 +338,10 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/Jun-Blog/2016/05/24/Something-about-MapReduce-1/">
-                    Something about MapReduce(1)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/Jun-Blog/2016/04/20/Machine-Learning-Concepts-2/">
-                    Machine Learning Concepts (2)
+                <a href="/Jun-Blog/2017/02/12/how-to-use-lucene-1/">
+                    how to use lucene (1)
                 </a>
             </div>
         
@@ -423,7 +409,7 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Solve a machine learning problem step by step　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"how to use lucene (1)　| Jun's Note Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -443,15 +429,13 @@ My main problem is lack of experiences in dealing such problems, e.g. Cases on K
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/Jun-Blog/2016/05/24/Something-about-MapReduce-1/" title="Pre: Something about MapReduce(1)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/Jun-Blog/2016/04/20/Machine-Learning-Concepts-2/" title="Next: Machine Learning Concepts (2)">
+            <a href="/Jun-Blog/2017/02/12/how-to-use-lucene-1/" title="Next: how to use lucene (1)">
                 <i class="fa fa-angle-right"></i>
             </a>
         

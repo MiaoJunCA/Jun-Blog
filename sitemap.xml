@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://miaojunca.github.io/Jun-Blog/2017/02/12/how-to-use-lucene-1-1/</loc>
+    
+    <lastmod>2017-02-13T00:55:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://miaojunca.github.io/Jun-Blog/2017/02/12/how-to-use-lucene-1/</loc>
+    
+    <lastmod>2017-02-13T00:49:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://miaojunca.github.io/Jun-Blog/2016/10/15/how-to-use-setuptools-for-python-projects/</loc>
     
     <lastmod>2016-10-16T18:49:46.000Z</lastmod>
