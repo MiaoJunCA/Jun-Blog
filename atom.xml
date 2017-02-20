@@ -5,7 +5,7 @@
   <link href="/Jun-Blog/atom.xml" rel="self"/>
   
   <link href="https://miaojunca.github.io/"/>
-  <updated>2017-02-13T00:55:12.000Z</updated>
+  <updated>2017-02-20T21:23:42.000Z</updated>
   <id>https://miaojunca.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>how to use lucene (2)</title>
+    <link href="https://miaojunca.github.io/2017/02/20/how-to-use-lucene-2/"/>
+    <id>https://miaojunca.github.io/2017/02/20/how-to-use-lucene-2/</id>
+    <published>2017-02-20T20:37:15.000Z</published>
+    <updated>2017-02-20T21:23:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>#####Search<br>After building an index, we need to implement search method for real usage. A quick search can be implemented in several lines:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">MultiFieldQueryParser parser = <span class="keyword">new</span> MultiFieldQueryParser(searchFields, analyzer);</div><div class="line">Query query = parser.parse(<span class="string">"Ipad"</span>);</div><div class="line">TopDocs topDocs = indexsearcher.search(query, returnedDocNum);</div><div class="line">ScoreDoc[] docs = topDocs.scoreDocs;</div></pre></td></tr></table></figure>
+<p>So, to search something, we need to set some variables first.<br><a id="more"></a></p>
+<ol>
+<li>A query parser. Query parser will convert a string into a Lucene-format query which includes a set of “clause”. Each clause will be the combination of a field and a tokenized query term. So here we have to set the field array we want to search with according analyzer.</li>
+<li>Query. After we use the parser to analyze the raw query, we get a query.</li>
+<li>An IndexReader. IndexReader objects can be created by new IndexReader(indexPath). For all statistics we want to use, we need to obtain from an index reader. More examples can be found at Lucene’ official Javadoc <a href="https://lucene.apache.org/core/5_1_0/core/org/apache/lucene/index/package-summary.html" target="_blank" rel="external">here</a>. The document can show you how to get the most useful information in an index. </li>
+<li>The returned docs are in ScoreDoc format. The class includes the doc internal id and its according score.</li>
+<li>A Similarity function! This is the core of a search engine. According to my experience, ClassicSimilarity is very good for common usage. More information is <a href="http://www.lucenetutorial.com/advanced-topics/scoring.html" target="_blank" rel="external">here</a>. Although Lucene has ben updated many times, the scoring formula is not changed. </li>
+</ol>
+<p>One thing I want to mention is that for different similarity function, the formula can be quite different! The most efficient way to know how a similarity function works is to print its explanation as follows</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Explanation e = searcher.explain(query, docId);</div><div class="line">System.out.println(e.toString())</div></pre></td></tr></table></figure>
+<p>For example, if you use ClassicSimilarity, you will see the output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">3.4333777 = sum of:</div><div class="line">  0.8260998 = sum of:</div><div class="line">    0.45502663 = weight(title:kindle in 50234) [ClassicSimilarity], result of:</div><div class="line">      0.45502663 = score(doc=50234,freq=1.0), product of:</div><div class="line">        0.332346 = queryWeight, product of:</div><div class="line">          6.258904 = idf(docFreq=1909, docCount=367236)</div><div class="line">          0.05309971 = queryNorm</div><div class="line">        1.3691353 = fieldWeight in 50234, product of:</div><div class="line">          1.0 = tf(freq=1.0), with freq of:</div><div class="line">            1.0 = termFreq=1.0</div><div class="line">          6.258904 = idf(docFreq=1909, docCount=367236)</div><div class="line">          0.21875 = fieldNorm(doc=50234)</div></pre></td></tr></table></figure>
+<p>The hierarchy structure reveal the process of calculating the score of a clause given a document field. In the above example, we calculate <strong>fieldWeight</strong> 1.36911353 from the product of tf, idf and fieldNorm.</p>
+<p>A trick to get the score of just one document given a query and a similarity function is using explanation, too. When we get the Explanation e, <strong>e.getValue()</strong> is what we need. Straightforward!</p>
+<p>So, search in Lucene is totally field-based. If you want to search cross fields, the only way I know is create a new field including the contents of other several. </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;#####Search&lt;br&gt;After building an index, we need to implement search method for real usage. A quick search can be implemented in several lines:&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;MultiFieldQueryParser parser = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; MultiFieldQueryParser(searchFields, analyzer);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Query query = parser.parse(&lt;span class=&quot;string&quot;&gt;&quot;Ipad&quot;&lt;/span&gt;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;TopDocs topDocs = indexsearcher.search(query, returnedDocNum);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;ScoreDoc[] docs = topDocs.scoreDocs;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;So, to search something, we need to set some variables first.&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="https://miaojunca.github.io/categories/Programming/"/>
+    
+    
+      <category term="Information Retrieval" scheme="https://miaojunca.github.io/tags/Information-Retrieval/"/>
+    
+      <category term="Lucene" scheme="https://miaojunca.github.io/tags/Lucene/"/>
+    
+  </entry>
   
   <entry>
     <title>how to use lucene (1)</title>
